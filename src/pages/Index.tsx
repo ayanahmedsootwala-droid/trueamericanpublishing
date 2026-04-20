@@ -1,16 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/site/Navbar";
+import Hero from "@/components/site/Hero";
+import Services from "@/components/site/Services";
+import Portfolio from "@/components/site/Portfolio";
+import Process from "@/components/site/Process";
+import Testimonials from "@/components/site/Testimonials";
+import Pricing from "@/components/site/Pricing";
+import About from "@/components/site/About";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
+import { useReveal } from "@/hooks/useReveal";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useReveal();
+
+  // Structured data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Lumora Press",
+    description:
+      "Cinematic publishing studio offering ghostwriting, publishing, marketing, cover design and audiobook production for ambitious authors.",
+    url: "/",
+    sameAs: [],
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Process />
+        <Testimonials />
+        <Pricing />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
