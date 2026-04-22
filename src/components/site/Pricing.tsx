@@ -3,38 +3,83 @@ import { Check, Crown } from "lucide-react";
 
 const tiers = [
   {
-    name: "Spark",
-    tagline: "For first-time authors",
-    price: "$4,800",
+    name: "Starter",
+    tagline: "Kickstart your author journey",
+    price: "$749",
     features: [
-      "Manuscript coaching (up to 40k words)",
-      "Developmental + copy editing",
-      "Custom cover design",
-      "Print + eBook publishing",
-      "Amazon distribution",
+      "Manuscript consultation (up to 10k words)",
+      "Basic developmental feedback",
+      "Standard cover concept",
+      "eBook formatting",
+      "Amazon KDP setup",
     ],
-    cta: "Start with Spark",
+    cta: "Get Started",
     featured: false,
   },
   {
-    name: "Signature",
-    tagline: "Most chosen by serious authors",
-    price: "$14,500",
+    name: "Essential",
+    tagline: "For aspiring first-time authors",
+    price: "$999",
     features: [
-      "Full ghostwriting (up to 70k words)",
+      "Ghostwriting (up to 15k words)",
+      "Proofreading & basic editing",
+      "Custom cover design",
+      "eBook + paperback formatting",
+      "Amazon distribution",
+    ],
+    cta: "Choose Essential",
+    featured: false,
+  },
+  {
+    name: "Author",
+    tagline: "Polished publishing made simple",
+    price: "$1,399",
+    features: [
+      "Ghostwriting (up to 25k words)",
+      "Developmental + copy editing",
+      "Premium cover design",
+      "Print + eBook publishing",
+      "ISBN + Amazon distribution",
+      "Author bio & blurb crafting",
+    ],
+    cta: "Become an Author",
+    featured: false,
+  },
+  {
+    name: "Professional",
+    tagline: "Most chosen by serious writers",
+    price: "$2,199",
+    features: [
+      "Full ghostwriting (up to 40k words)",
       "Premium editorial team",
       "Award-winning cover + interior",
-      "Audiobook production",
-      "40K retailer distribution",
-      "8-week launch campaign",
+      "Print, eBook + Audiobook setup",
+      "Multi-retailer distribution",
+      "4-week launch campaign",
     ],
-    cta: "Go Signature",
+    cta: "Go Professional",
     featured: true,
+  },
+  {
+    name: "Premium",
+    tagline: "Elite production for ambitious authors",
+    price: "$3,499",
+    features: [
+      "Senior ghostwriter (up to 60k words)",
+      "Full editorial + proofreading suite",
+      "Luxury cover & interior design",
+      "Audiobook narration & production",
+      "20K+ retailer distribution",
+      "8-week marketing campaign",
+      "Author website starter",
+    ],
+    cta: "Go Premium",
+    featured: false,
   },
   {
     name: "Legacy",
     tagline: "For category-defining works",
-    price: "Custom",
+    price: "$7,499",
     features: [
       "Senior ghostwriter + research team",
       "Bestseller campaign engineering",
@@ -65,16 +110,16 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {tiers.map((t, i) => (
             <div
               key={t.name}
               className={`reveal relative rounded-2xl p-8 flex flex-col transition-all duration-500 ${
                 t.featured
-                  ? "glass-card border border-primary/40 shadow-gold scale-100 md:scale-105 z-10 bg-gradient-to-b from-primary/[0.06] to-transparent"
+                  ? "glass-card border border-primary/40 shadow-gold z-10 bg-gradient-to-b from-primary/[0.06] to-transparent"
                   : "glass-card glow-border hover:-translate-y-1"
               }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               {t.featured && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-gradient-gold px-4 py-1 text-xs font-bold text-primary-foreground shadow-glow-gold">
