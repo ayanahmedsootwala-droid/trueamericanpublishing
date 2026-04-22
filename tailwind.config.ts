@@ -13,7 +13,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Cormorant Garamond"', 'serif'],
+        display: ['"Playfair Display"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -25,6 +25,7 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          deep: "hsl(var(--primary-deep))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -55,16 +56,16 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
-        'gradient-gold': 'var(--gradient-gold)',
-        'gradient-purple': 'var(--gradient-purple)',
+        'gradient-crimson': 'var(--gradient-crimson)',
+        'gradient-crimson-soft': 'var(--gradient-crimson-soft)',
         'gradient-card': 'var(--gradient-card)',
-        'gradient-radial-gold': 'var(--gradient-radial-gold)',
+        'gradient-radial-crimson': 'var(--gradient-radial-crimson)',
       },
       boxShadow: {
-        gold: 'var(--shadow-gold)',
-        purple: 'var(--shadow-purple)',
+        crimson: 'var(--shadow-crimson)',
         elegant: 'var(--shadow-elegant)',
-        'glow-gold': 'var(--glow-gold)',
+        soft: 'var(--shadow-soft)',
+        'glow-crimson': 'var(--glow-crimson)',
       },
       borderRadius: {
         lg: "var(--radius)",

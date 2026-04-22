@@ -1,66 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Lumora Press — cinematic premium publishing agency design system.
-   All colors HSL. Dark by default. */
+/* True American Publishers — premium white & crimson ebook agency design system. */
 
 @layer base {
   :root {
-    /* Deep cinematic black with subtle warmth */
-    --background: 240 18% 4%;
-    --foreground: 40 20% 96%;
+    /* Crisp white background with warm undertone */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 10%;
 
-    --card: 240 16% 7%;
-    --card-foreground: 40 20% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
 
-    --popover: 240 18% 5%;
-    --popover-foreground: 40 20% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
 
-    /* Royal gold — primary brand */
-    --primary: 42 88% 60%;
-    --primary-foreground: 240 20% 6%;
-    --primary-glow: 45 100% 70%;
+    /* Crimson red — primary brand */
+    --primary: 350 82% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 352 90% 55%;
+    --primary-deep: 348 88% 32%;
 
-    /* Royal purple — secondary brand */
-    --secondary: 268 70% 28%;
-    --secondary-foreground: 40 20% 96%;
-    --secondary-glow: 272 90% 62%;
+    /* Soft warm secondary */
+    --secondary: 14 90% 96%;
+    --secondary-foreground: 350 82% 32%;
+    --secondary-glow: 350 70% 88%;
 
-    --muted: 240 12% 12%;
-    --muted-foreground: 40 8% 65%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 42%;
 
-    /* Neon blue accent */
-    --accent: 215 95% 60%;
-    --accent-foreground: 240 20% 6%;
-    --accent-glow: 200 100% 65%;
+    /* Warm gold accent for highlights */
+    --accent: 38 88% 52%;
+    --accent-foreground: 220 25% 10%;
+    --accent-glow: 42 95% 62%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 40 20% 96%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 14% 14%;
-    --input: 240 14% 12%;
-    --ring: 42 88% 60%;
+    --border: 220 14% 90%;
+    --input: 220 14% 92%;
+    --ring: 350 82% 42%;
 
     --radius: 0.85rem;
 
-    /* Cinematic gradients */
-    --gradient-hero: radial-gradient(ellipse at top, hsl(268 70% 18% / 0.7), transparent 60%),
-                     radial-gradient(ellipse at bottom right, hsl(42 88% 30% / 0.35), transparent 60%),
-                     linear-gradient(180deg, hsl(240 18% 3%), hsl(240 20% 6%));
-    --gradient-gold: linear-gradient(135deg, hsl(42 88% 60%), hsl(45 100% 75%), hsl(38 95% 55%));
-    --gradient-purple: linear-gradient(135deg, hsl(268 70% 28%), hsl(280 80% 50%));
-    --gradient-card: linear-gradient(160deg, hsl(240 16% 9% / 0.9), hsl(240 18% 6% / 0.6));
-    --gradient-border: linear-gradient(135deg, hsl(42 88% 60% / 0.6), hsl(272 80% 60% / 0.3), transparent);
-    --gradient-radial-gold: radial-gradient(circle at center, hsl(42 88% 60% / 0.25), transparent 70%);
+    /* Premium gradients */
+    --gradient-hero: radial-gradient(ellipse at top right, hsl(350 82% 42% / 0.10), transparent 55%),
+                     radial-gradient(ellipse at bottom left, hsl(38 88% 52% / 0.08), transparent 55%),
+                     linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-crimson: linear-gradient(135deg, hsl(350 82% 42%), hsl(352 90% 55%), hsl(348 88% 38%));
+    --gradient-crimson-soft: linear-gradient(135deg, hsl(350 82% 42% / 0.10), hsl(352 90% 55% / 0.04));
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-border: linear-gradient(135deg, hsl(350 82% 42% / 0.5), hsl(38 88% 52% / 0.3), transparent);
+    --gradient-radial-crimson: radial-gradient(circle at center, hsl(350 82% 42% / 0.18), transparent 70%);
 
-    /* Shadows & glows */
-    --shadow-gold: 0 10px 40px -10px hsl(42 88% 55% / 0.5), 0 0 60px -20px hsl(45 100% 70% / 0.4);
-    --shadow-purple: 0 10px 40px -10px hsl(272 80% 50% / 0.5), 0 0 80px -30px hsl(280 90% 60% / 0.4);
-    --shadow-elegant: 0 30px 80px -30px hsl(0 0% 0% / 0.8), 0 0 0 1px hsl(40 20% 96% / 0.04);
-    --glow-gold: 0 0 30px hsl(42 88% 60% / 0.45);
+    /* Shadows & glows — premium, soft */
+    --shadow-crimson: 0 18px 50px -18px hsl(350 82% 42% / 0.45), 0 0 0 1px hsl(350 82% 42% / 0.06);
+    --shadow-elegant: 0 24px 60px -24px hsl(220 25% 10% / 0.18), 0 0 0 1px hsl(220 25% 10% / 0.04);
+    --shadow-soft: 0 12px 30px -10px hsl(220 25% 10% / 0.12);
+    --glow-crimson: 0 0 30px hsl(350 82% 42% / 0.35);
 
     /* Motion */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -79,31 +79,24 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(268 70% 16% / 0.5), transparent),
-      radial-gradient(ellipse 60% 50% at 100% 0%, hsl(42 88% 25% / 0.18), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(350 82% 42% / 0.06), transparent),
+      radial-gradient(ellipse 60% 50% at 100% 100%, hsl(38 88% 52% / 0.05), transparent);
     background-attachment: fixed;
   }
   ::selection {
-    background: hsl(var(--primary) / 0.3);
-    color: hsl(var(--primary-glow));
+    background: hsl(var(--primary) / 0.18);
+    color: hsl(var(--primary-deep));
   }
 }
 
 @layer components {
   .font-display {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-    letter-spacing: -0.01em;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    letter-spacing: -0.015em;
   }
 
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .text-gradient-purple {
-    background: var(--gradient-purple);
+  .text-gradient-crimson {
+    background: var(--gradient-crimson);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -111,9 +104,21 @@
 
   .glass-card {
     background: var(--gradient-card);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(40 20% 96% / 0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(220 14% 90%);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .premium-card {
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(220 14% 92%);
     box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+  .premium-card:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: var(--shadow-crimson);
+    transform: translateY(-4px);
   }
 
   .glow-border {
@@ -130,15 +135,11 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
-
-  .noise-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  .glow-border:hover::before {
+    opacity: 1;
   }
 
   .reveal {
@@ -150,13 +151,33 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .policy-prose h2 {
+    @apply font-display text-3xl mt-10 mb-4 text-foreground;
+  }
+  .policy-prose h3 {
+    @apply font-semibold text-lg mt-6 mb-2 text-foreground;
+  }
+  .policy-prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  .policy-prose ul {
+    @apply list-disc pl-6 mb-4 space-y-2;
+  }
+  .policy-prose a {
+    @apply text-primary underline underline-offset-2 hover:text-primary-glow;
+  }
 }
 
 @layer utilities {
   .bg-grid-faint {
     background-image:
-      linear-gradient(hsl(40 20% 96% / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(40 20% 96% / 0.04) 1px, transparent 1px);
+      linear-gradient(hsl(220 25% 10% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 25% 10% / 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(hsl(220 25% 10% / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
