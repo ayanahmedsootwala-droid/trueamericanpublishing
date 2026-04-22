@@ -1,82 +1,81 @@
-import { BookOpen, PenLine, Megaphone, Palette, Headphones, Library } from "lucide-react";
+import { BookOpen, PenLine, Megaphone, Palette, Headphones, Library, ShoppingCart, FileEdit } from "lucide-react";
 
 const services = [
   {
-    icon: BookOpen,
-    title: "Book Writing",
-    desc: "We craft the manuscript you've always meant to write — sharp, structural, unmistakably yours.",
-    accent: "from-primary/40 to-primary/0",
-  },
-  {
     icon: PenLine,
     title: "Ghostwriting",
-    desc: "Discreet, world-class collaborators trained in your voice. Your name. Your vision. Their craft.",
-    accent: "from-secondary-glow/40 to-secondary/0",
+    desc: "World-class collaborators who write in your voice — from concept to finished manuscript.",
   },
   {
-    icon: Library,
-    title: "Publishing",
-    desc: "Hybrid and traditional pathways with full distribution to Amazon, Barnes & Noble, and 40K retailers.",
-    accent: "from-accent/40 to-accent/0",
+    icon: BookOpen,
+    title: "eBook Writing",
+    desc: "Original full-length eBooks crafted around your expertise, audience, and bestseller goals.",
   },
   {
-    icon: Megaphone,
-    title: "Marketing",
-    desc: "Bestseller campaigns, PR placements, paid acquisition and Amazon ads engineered for impact.",
-    accent: "from-primary/40 to-primary/0",
+    icon: FileEdit,
+    title: "Editing & Proofreading",
+    desc: "Developmental, line, and copy editing by editors with Big-Five and indie experience.",
   },
   {
     icon: Palette,
-    title: "Cover Design",
-    desc: "Iconic, award-winning covers that stop the scroll and own the shelf — physical and digital.",
-    accent: "from-secondary-glow/40 to-secondary/0",
+    title: "Cover & Interior Design",
+    desc: "Iconic covers and clean, modern interior layouts for Kindle, paperback and hardcover.",
+  },
+  {
+    icon: Library,
+    title: "eBook Publishing",
+    desc: "End-to-end Amazon KDP, Apple Books, B&N, Kobo and Google Play distribution.",
   },
   {
     icon: Headphones,
-    title: "Audiobooks",
-    desc: "Studio-grade narration, mastering and ACX/Audible distribution to capture the listening market.",
-    accent: "from-accent/40 to-accent/0",
+    title: "Audiobook Production",
+    desc: "Studio-grade narration, mastering and ACX/Audible distribution.",
+  },
+  {
+    icon: Megaphone,
+    title: "Book Marketing",
+    desc: "Bestseller campaigns, Amazon ads, BookTok, PR placements, and email funnels.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Author Branding",
+    desc: "Author websites, social presence and lead magnets that turn readers into superfans.",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-grid-faint opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+    <section id="services" className="relative py-28 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-grid-faint opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       <div className="container relative">
         <div className="max-w-2xl reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">What We Do</p>
-          <h2 className="font-display text-5xl md:text-6xl leading-tight">
-            Six disciplines.<br />
-            <span className="text-gradient-gold italic">One unstoppable book.</span>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">What We Do</p>
+          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            Eight disciplines.<br />
+            <span className="text-gradient-crimson italic">One unstoppable book.</span>
           </h2>
           <p className="mt-6 text-muted-foreground text-lg">
-            Every service under one roof — engineered to make your book impossible to ignore.
+            Every service a self-publishing author needs — engineered to make your eBook impossible to ignore.
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <article
               key={s.title}
-              className="reveal group relative rounded-2xl glass-card glow-border p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-gold"
+              className="reveal premium-card group relative rounded-2xl p-7 overflow-hidden"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className={`absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${s.accent} blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+              <div className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
               <div className="relative">
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 border border-primary/20 group-hover:border-primary/50 transition-colors">
-                  <s.icon className="h-6 w-6 text-primary" />
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-crimson-soft border border-primary/15 group-hover:bg-gradient-crimson group-hover:border-transparent transition-all duration-500">
+                  <s.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
 
-                <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
-
-                <div className="mt-8 flex items-center gap-2 text-sm text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                  Learn more
-                  <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                </div>
+                <h3 className="mt-5 font-display text-xl text-foreground font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             </article>
           ))}
