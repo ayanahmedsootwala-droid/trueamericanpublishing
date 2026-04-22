@@ -1,4 +1,5 @@
 import { Quote, Star } from "lucide-react";
+import deskImg from "@/assets/editorial/desk.jpg";
 
 const testimonials = [
   {
@@ -19,11 +20,31 @@ const testimonials = [
     role: "Founder & WSJ Bestseller",
     initials: "JH",
   },
+  {
+    quote: "Their editors transformed my voice without ever silencing it. The final manuscript reads exactly like me — only sharper, deeper, unforgettable.",
+    name: "Liana Storm",
+    role: "NYT Bestselling Fantasy Author",
+    initials: "LS",
+  },
+  {
+    quote: "From cover concept to Audible chart-topper in 11 weeks. I've worked with three Big Five imprints — none operated with this precision.",
+    name: "Cora Lane",
+    role: "Top 10 Audible · Thriller",
+    initials: "CL",
+  },
+  {
+    quote: "They handled everything — ghostwriting, design, distribution, PR. I just showed up to interviews. My book is now required reading at two MBA programs.",
+    name: "Sarah Mitchell",
+    role: "HBR Bestseller · Founder",
+    initials: "SM",
+  },
 ];
 
 const Testimonials = () => {
   return (
     <section className="relative py-28 md:py-32 overflow-hidden">
+      <div className="absolute -top-20 right-0 h-[500px] w-[500px] bg-gradient-radial-crimson blur-3xl opacity-40" />
+
       <div className="container relative">
         <div className="max-w-2xl mx-auto text-center reveal">
           <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Author Voices</p>
@@ -31,14 +52,42 @@ const Testimonials = () => {
             Trusted by the<br />
             <span className="text-gradient-crimson italic">authors who matter.</span>
           </h2>
+          <p className="mt-6 text-muted-foreground text-lg">
+            Founders, scientists, novelists and visionaries — united by one belief:
+            their story deserved a publisher who treated it like a masterpiece.
+          </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Editorial pictorial banner */}
+        <div className="mt-16 reveal relative rounded-3xl overflow-hidden shadow-elegant">
+          <img
+            src={deskImg}
+            alt="Antique writing desk with manuscript and fountain pen"
+            loading="lazy"
+            width={1280}
+            height={500}
+            className="w-full h-[260px] md:h-[360px] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/40 to-transparent" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="container">
+              <div className="max-w-md">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">The Craft</p>
+                <p className="font-display text-2xl md:text-3xl leading-snug text-foreground italic">
+                  "Behind every bestseller — a thousand quiet decisions made with reverence for the reader."
+                </p>
+                <p className="mt-4 text-sm text-muted-foreground">— Editorial Director, True American Publishers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <figure
               key={t.name}
               className="reveal premium-card relative rounded-2xl p-8"
-              style={{ transitionDelay: `${i * 100}ms` }}
+              style={{ transitionDelay: `${(i % 3) * 100}ms` }}
             >
               <Quote className="h-8 w-8 text-primary/30 mb-4" />
               <div className="flex gap-0.5 mb-4">
