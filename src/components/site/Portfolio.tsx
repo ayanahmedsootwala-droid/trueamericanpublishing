@@ -13,7 +13,22 @@ import f3 from "@/assets/genre/fantasy-3.jpg";
 import r1 from "@/assets/genre/romance-1.jpg";
 import r2 from "@/assets/genre/romance-2.jpg";
 import r3 from "@/assets/genre/romance-3.jpg";
-import { Briefcase, Skull, Sparkles, Heart } from "lucide-react";
+import m1 from "@/assets/genre/memoir-1.jpg";
+import m2 from "@/assets/genre/memoir-2.jpg";
+import m3 from "@/assets/genre/memoir-3.jpg";
+import c1 from "@/assets/genre/children-1.jpg";
+import c2 from "@/assets/genre/children-2.jpg";
+import c3 from "@/assets/genre/children-3.jpg";
+import h1 from "@/assets/genre/historical-1.jpg";
+import h2 from "@/assets/genre/historical-2.jpg";
+import h3 from "@/assets/genre/historical-3.jpg";
+import y1 from "@/assets/genre/ya-1.jpg";
+import y2 from "@/assets/genre/ya-2.jpg";
+import y3 from "@/assets/genre/ya-3.jpg";
+import p1 from "@/assets/genre/poetry-1.jpg";
+import p2 from "@/assets/genre/poetry-2.jpg";
+import p3 from "@/assets/genre/poetry-3.jpg";
+import { Briefcase, Skull, Sparkles, Heart, BookHeart, Baby, Landmark, GraduationCap, Feather } from "lucide-react";
 
 type Book = { img: string; title: string; author: string; rank: string };
 
@@ -68,6 +83,61 @@ const genres: Array<{
       { img: r3, title: "Forbidden Vows", author: "Sienna Knight", rank: "NYT Bestseller" },
     ],
   },
+  {
+    id: "memoir",
+    label: "Memoir & Biography",
+    icon: BookHeart,
+    blurb: "Intimate true stories given the literary polish of a Big Five debut.",
+    books: [
+      { img: m1, title: "Letters I Never Sent", author: "Helena Marsh", rank: "Indie Bestseller" },
+      { img: m2, title: "The House on Mulberry Lane", author: "Theodore Vance", rank: "NPR Pick" },
+      { img: m3, title: "Becoming Ember", author: "Yara Solano", rank: "Goodreads Choice" },
+    ],
+  },
+  {
+    id: "historical",
+    label: "Historical Fiction",
+    icon: Landmark,
+    blurb: "Sweeping period sagas researched with archival depth and cinematic sweep.",
+    books: [
+      { img: h1, title: "The Cartographer's Daughter", author: "Adelaide Roux", rank: "Historical Bestseller" },
+      { img: h2, title: "Empire of Salt", author: "Rafael Castile", rank: "Amazon #1" },
+      { img: h3, title: "The Velvet Conspiracy", author: "Constance Aldridge", rank: "USA Today" },
+    ],
+  },
+  {
+    id: "ya",
+    label: "Young Adult",
+    icon: GraduationCap,
+    blurb: "TikTok-ready coming-of-age stories built for crossover bestseller status.",
+    books: [
+      { img: y1, title: "Crowns of Ash", author: "Niamh Kestrel", rank: "BookTok #1" },
+      { img: y2, title: "Summer of Static", author: "Jules Avery", rank: "YA Bestseller" },
+      { img: y3, title: "The Last Signal", author: "Theo Mendez", rank: "NYT YA #4" },
+    ],
+  },
+  {
+    id: "children",
+    label: "Children's Books",
+    icon: Baby,
+    blurb: "Charming illustrated picture books with collectable, gift-worthy production.",
+    books: [
+      { img: c1, title: "The Whispering Woods", author: "Lila Park", rank: "Parents' Choice" },
+      { img: c2, title: "Captain Cookie & the Moon Cake", author: "Marco Beam", rank: "Amazon #1 Kids" },
+      { img: c3, title: "Little Lighthouse", author: "Rosie Quill", rank: "Indie Picture #2" },
+    ],
+  },
+  {
+    id: "poetry",
+    label: "Poetry & Literary",
+    icon: Feather,
+    blurb: "Slim volumes of poetry & literary essays designed to be heirlooms.",
+    books: [
+      { img: p1, title: "Wildflower Hours", author: "Imani Vale", rank: "Indie Poetry #1" },
+      { img: p2, title: "After the Eclipse", author: "Soren Kael", rank: "Goodreads Poetry" },
+      { img: p3, title: "Salt and Honey", author: "Mira Adelle", rank: "Bestselling Verse" },
+    ],
+  },
 ];
 
 const Portfolio = () => {
@@ -87,9 +157,8 @@ const Portfolio = () => {
               <span className="text-gradient-crimson italic">every category.</span>
             </h2>
             <p className="mt-6 text-muted-foreground max-w-xl text-lg leading-relaxed">
-              From boardroom manifestos to BookTok love stories — explore the four worlds
-              where our authors are quietly redefining what a bestseller looks like in
-              the modern publishing era.
+              From boardroom manifestos to BookTok love stories, picture books to poetry — explore the nine worlds
+              where True American Publishers' authors are quietly redefining what a bestseller looks like.
             </p>
           </div>
 

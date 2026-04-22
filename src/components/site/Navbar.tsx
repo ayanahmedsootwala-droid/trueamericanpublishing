@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -8,6 +9,7 @@ const links = [
   { href: "#process", label: "Process" },
   { href: "#pricing", label: "Pricing" },
   { href: "#about", label: "About" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 const Navbar = () => {
@@ -30,16 +32,22 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between h-20">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-crimson shadow-glow-crimson">
-            <span className="font-display text-xl text-primary-foreground font-bold">T</span>
+        <a href="#top" className="flex items-center gap-3 group">
+          <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-crimson shadow-glow-crimson p-1.5 transition-transform duration-500 group-hover:rotate-3">
+            <img
+              src={logo}
+              alt="True American Publishers logo — ghost rising from open book with quill"
+              width={44}
+              height={44}
+              className="h-full w-full object-contain brightness-0 invert"
+            />
           </span>
-          <span className="font-display text-lg md:text-xl tracking-tight font-bold">
+          <span className="font-display text-base md:text-xl tracking-tight font-bold leading-tight">
             True American <span className="text-gradient-crimson">Publishers</span>
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <a
               key={l.href}
@@ -52,14 +60,14 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button variant="hero" size="sm" asChild>
             <a href="#contact">Start Your Book</a>
           </Button>
         </div>
 
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -68,7 +76,7 @@ const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-white/98 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-border bg-white/98 backdrop-blur-xl">
           <div className="container py-6 flex flex-col gap-4">
             {links.map((l) => (
               <a

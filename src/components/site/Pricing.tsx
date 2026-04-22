@@ -1,94 +1,143 @@
 import { Button } from "@/components/ui/button";
-import { Check, Crown } from "lucide-react";
+import { Check, Crown, Sparkles } from "lucide-react";
 
 const tiers = [
   {
-    name: "Starter",
-    tagline: "Kickstart your author journey",
+    name: "Basic",
+    tagline: "Polished, ready, and 100% yours.",
     price: "$749",
+    original: "$2,497",
+    description: "Everything you need to get your manuscript polished and ready.",
     features: [
-      "Manuscript consultation (up to 10k words)",
-      "Basic developmental feedback",
-      "Standard cover concept",
-      "eBook formatting",
-      "Amazon KDP setup",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
     ],
-    cta: "Get Started",
+    cta: "Start with Basic",
     featured: false,
   },
   {
-    name: "Essential",
-    tagline: "For aspiring first-time authors",
-    price: "$999",
+    name: "Standard",
+    tagline: "Cover. Kindle. Ready to launch.",
+    price: "$1,499",
+    original: "$4,997",
+    description: "Complete package with cover design and Kindle e-book publishing.",
     features: [
-      "Ghostwriting (up to 15k words)",
-      "Proofreading & basic editing",
-      "Custom cover design",
-      "eBook + paperback formatting",
-      "Amazon distribution",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "Publishing on Kindle (E-book)",
     ],
-    cta: "Choose Essential",
+    cta: "Choose Standard",
     featured: false,
-  },
-  {
-    name: "Author",
-    tagline: "Polished publishing made simple",
-    price: "$1,399",
-    features: [
-      "Ghostwriting (up to 25k words)",
-      "Developmental + copy editing",
-      "Premium cover design",
-      "Print + eBook publishing",
-      "ISBN + Amazon distribution",
-      "Author bio & blurb crafting",
-    ],
-    cta: "Become an Author",
-    featured: false,
-  },
-  {
-    name: "Professional",
-    tagline: "Most chosen by serious writers",
-    price: "$2,199",
-    features: [
-      "Full ghostwriting (up to 40k words)",
-      "Premium editorial team",
-      "Award-winning cover + interior",
-      "Print, eBook + Audiobook setup",
-      "Multi-retailer distribution",
-      "4-week launch campaign",
-    ],
-    cta: "Go Professional",
-    featured: true,
   },
   {
     name: "Premium",
-    tagline: "Elite production for ambitious authors",
-    price: "$3,499",
+    tagline: "Two formats. Global retailers.",
+    price: "$2,100",
+    original: "$7,000",
+    description: "Full publishing with ISBN, Amazon & Kindle in both e-book and paperback.",
     features: [
-      "Senior ghostwriter (up to 60k words)",
-      "Full editorial + proofreading suite",
-      "Luxury cover & interior design",
-      "Audiobook narration & production",
-      "20K+ retailer distribution",
-      "8-week marketing campaign",
-      "Author website starter",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "ISBN Number",
+      "Publishing on Amazon & Kindle",
+      "E-book + Paperback (2 Formats)",
     ],
     cta: "Go Premium",
     featured: false,
   },
   {
-    name: "Legacy",
-    tagline: "For category-defining works",
-    price: "$7,499",
+    name: "Professional",
+    tagline: "Author website + 3 formats.",
+    price: "$2,400",
+    original: "$8,000",
+    description: "Advanced publishing with author website, multi-platform distribution, and 3 formats.",
     features: [
-      "Senior ghostwriter + research team",
-      "Bestseller campaign engineering",
-      "PR placements (Forbes, Inc., etc.)",
-      "Foreign rights & translation",
-      "Adaptation & speaking pipeline",
-      "Dedicated launch director",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "ISBN + Barcode",
+      "Publishing on Amazon, Kindle & Barnes & Noble",
+      "2-4 Pages Author Website",
+      "1-Year Domain & Hosting",
+      "E-book, Paperback, Hardcover (3 Formats)",
     ],
-    cta: "Apply for Legacy",
+    cta: "Go Professional",
+    featured: true,
+  },
+  {
+    name: "Grand",
+    tagline: "Trailer. Marketing. Best-sellers team.",
+    price: "$4,200",
+    original: "$14,000",
+    description: "Complete solution with video trailer, 12-month marketing, and bestselling writers.",
+    features: [
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "ISBN + Barcode",
+      "Publishing on Amazon, Kindle, Barnes & Noble, Google Books & Kobo",
+      "2-4 Pages Author Website",
+      "1-Year Domain & Hosting",
+      "30-60 Seconds Video Trailer",
+      "12 Months of Brand Marketing",
+      "Dedicated Team of Best-Selling Writers",
+      "E-book, Paperback, Hardcover (3 Formats)",
+    ],
+    cta: "Choose Grand",
+    featured: false,
+  },
+  {
+    name: "Bestseller",
+    tagline: "The full bestseller engine.",
+    price: "$7,199",
+    original: "$23,997",
+    description: "The ultimate package to turn your book into a bestseller with full marketing support.",
+    features: [
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "ISBN + Barcode",
+      "Publishing on Amazon, Kindle, Barnes & Noble, Google Books & Kobo",
+      "2-4 Pages Author Website",
+      "2-Year Domain & Hosting",
+      "60-90 Seconds Video Trailer",
+      "24 Months of Bestselling Marketing",
+      "Dedicated Team of Best-Selling Writers",
+      "E-book, Paperback, Hardcover (3 Formats)",
+    ],
+    cta: "Apply for Bestseller",
     featured: false,
   },
 ];
@@ -110,6 +159,10 @@ const Pricing = () => {
             No upsells. No hidden retainers. Only senior talent, transparent scopes, and a
             single dedicated producer guiding your manuscript from first draft to the world stage.
           </p>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-crimson px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-glow-crimson">
+            <Sparkles className="h-3.5 w-3.5" />
+            Limited Launch · 70% OFF All Packages
+          </div>
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
@@ -123,6 +176,11 @@ const Pricing = () => {
               }`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
+              {/* Discount ribbon */}
+              <div className="absolute -top-3 right-5 inline-flex items-center gap-1 rounded-full bg-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-background shadow-soft">
+                70% OFF
+              </div>
+
               {t.featured && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-gradient-crimson px-4 py-1 text-xs font-bold text-primary-foreground shadow-glow-crimson">
                   <Crown className="h-3.5 w-3.5" />
@@ -136,10 +194,13 @@ const Pricing = () => {
               </div>
 
               <div className="mt-8 pb-8 border-b border-border">
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-gradient-crimson font-bold">{t.price}</span>
-                  <span className="text-sm text-muted-foreground">starting</span>
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <span className="font-display text-5xl text-gradient-crimson font-bold tracking-tight">{t.price}</span>
+                  <span className="text-lg text-muted-foreground line-through decoration-primary/40 decoration-2">
+                    {t.original}
+                  </span>
                 </div>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{t.description}</p>
               </div>
 
               <ul className="mt-8 space-y-3 flex-1">

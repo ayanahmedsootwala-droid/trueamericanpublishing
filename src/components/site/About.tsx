@@ -1,10 +1,33 @@
-import { Award, Users, Globe, BookOpen } from "lucide-react";
+import { Award, Users, Globe, BookOpen, ShieldCheck, Sparkles, Trophy, Building2 } from "lucide-react";
 
 const stats = [
   { v: "300+", l: "Books Published", Icon: BookOpen },
   { v: "37", l: "Bestsellers", Icon: Award },
   { v: "14M+", l: "Copies Sold", Icon: Globe },
   { v: "1,200+", l: "Happy Authors", Icon: Users },
+];
+
+const values = [
+  {
+    Icon: ShieldCheck,
+    title: "100% Author Ownership",
+    body: "Your name, your copyright, your royalties. We never take a percentage of your book sales — ever.",
+  },
+  {
+    Icon: Trophy,
+    title: "Senior Talent Only",
+    body: "Every project is led by a Big Five-trained editor and a producer with 10+ years in trade publishing.",
+  },
+  {
+    Icon: Sparkles,
+    title: "Cinematic Standard",
+    body: "We treat manuscripts like screenplays and launches like premieres — because that's what readers remember.",
+  },
+  {
+    Icon: Building2,
+    title: "End-to-End Studio",
+    body: "Writing, editing, design, distribution, audiobooks and marketing — all under one roof, one producer, one invoice.",
+  },
 ];
 
 const About = () => {
@@ -30,11 +53,14 @@ const About = () => {
                   same firepower as a New York Times bestseller?</span>
               </p>
               <p>
-                Today we're a full-service eBook agency that has helped over <span className="text-foreground font-semibold">1,200 authors</span> publish, market, and monetize their books — across business, fiction, fantasy and romance — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
+                A decade later, we're a fully integrated eBook studio with offices in
+                <span className="text-foreground font-medium"> New York, London and Los Angeles</span>,
+                a roster of 60+ specialized writers, in-house art directors, audio producers, and a
+                dedicated marketing arm that has placed books in <span className="text-foreground font-medium">USA Today, Wall Street Journal,
+                NYT, Amazon #1, BookTok and Audible top-10</span> charts.
               </p>
               <p>
-                We treat every manuscript like a screenplay. Every launch like a premiere. Every
-                author like the voice the world has been waiting to hear.
+                We've helped over <span className="text-foreground font-semibold">1,200 authors</span> publish, market, and monetize their books across nine genres — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
               </p>
               <blockquote className="border-l-2 border-primary pl-5 text-foreground font-display text-xl italic">
                 "Stories don't just sell — they shape decades."
@@ -68,6 +94,28 @@ const About = () => {
                 and to the world.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Values grid */}
+        <div className="mt-24 reveal">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">What Sets Us Apart</p>
+            <h3 className="font-display text-3xl md:text-4xl leading-tight font-bold">
+              Four standards we will <span className="text-gradient-crimson italic">never compromise.</span>
+            </h3>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => (
+              <div key={v.title} className="premium-card rounded-2xl p-7">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-crimson shadow-glow-crimson mb-5">
+                  <v.Icon className="h-5 w-5 text-primary-foreground" />
+                </div>
+                <h4 className="font-display text-xl font-bold">{v.title}</h4>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{v.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
