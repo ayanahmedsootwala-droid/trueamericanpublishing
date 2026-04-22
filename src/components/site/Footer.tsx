@@ -1,23 +1,33 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border bg-secondary/40 pt-16 pb-10">
-      <div className="container">
+    <footer className="relative border-t border-border bg-secondary/40 pt-16 pb-10 overflow-hidden">
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] bg-gradient-radial-crimson blur-3xl opacity-30" />
+
+      <div className="container relative">
         <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-crimson">
-                <span className="font-display text-lg text-primary-foreground font-bold">T</span>
+          <div className="md:col-span-4">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-crimson shadow-glow-crimson p-1.5">
+                <img
+                  src={logo}
+                  alt="True American Publishers logo"
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-contain brightness-0 invert"
+                />
               </span>
-              <span className="font-display text-xl font-bold">
+              <span className="font-display text-xl font-bold leading-tight">
                 True American <span className="text-gradient-crimson">Publishers</span>
               </span>
             </div>
             <p className="mt-5 text-sm text-muted-foreground max-w-sm leading-relaxed">
               America's premium eBook publishing studio — turning ambitious authors into
-              category-defining voices since 2013.
+              category-defining voices since 2013. Ghostwriting, design, distribution and
+              marketing under one cinematic roof.
             </p>
             <div className="mt-6 space-y-2 text-sm text-muted-foreground">
               <a href="mailto:hello@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
@@ -30,9 +40,27 @@ const Footer = () => {
                 <MapPin className="h-4 w-4" /> New York · London · Los Angeles
               </p>
             </div>
+
+            <div className="mt-6 flex items-center gap-3">
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Twitter, label: "X / Twitter" },
+                { Icon: Linkedin, label: "LinkedIn" },
+              ].map(({ Icon, label }) => (
+                <a
+                  key={label}
+                  href="#"
+                  aria-label={label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="text-sm font-semibold text-foreground mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/#services" className="hover:text-primary transition-colors">eBook Writing</a></li>
@@ -45,12 +73,28 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
+            <h4 className="text-sm font-semibold text-foreground mb-4">Genres</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="/#work" className="hover:text-primary transition-colors">Business & Self-Help</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Thriller & Mystery</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Fantasy & Sci-Fi</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Romance</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Memoir & Biography</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Historical Fiction</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Children's Books</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Poetry & Literary</a></li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
             <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/#work" className="hover:text-primary transition-colors">Our Work</a></li>
               <li><a href="/#process" className="hover:text-primary transition-colors">Process</a></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
               <li><a href="/#about" className="hover:text-primary transition-colors">About</a></li>
+              <li><a href="/#faq" className="hover:text-primary transition-colors">FAQ</a></li>
               <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>

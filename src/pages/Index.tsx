@@ -6,6 +6,7 @@ import Process from "@/components/site/Process";
 import Testimonials from "@/components/site/Testimonials";
 import Pricing from "@/components/site/Pricing";
 import About from "@/components/site/About";
+import FAQ from "@/components/site/FAQ";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import { useReveal } from "@/hooks/useReveal";
@@ -36,6 +37,7 @@ const Index = () => {
         <Testimonials />
         <Pricing />
         <About />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
