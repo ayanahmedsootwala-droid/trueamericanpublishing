@@ -32,10 +32,10 @@ const Navbar = () => {
       <nav className="container flex items-center justify-between h-20">
         <a href="#top" className="flex items-center gap-2 group">
           <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-gold shadow-glow-gold">
-            <span className="font-display text-xl text-primary-foreground font-bold">L</span>
+            <span className="font-display text-xl text-primary-foreground font-bold">T</span>
           </span>
-          <span className="font-display text-2xl tracking-wide">
-            Lumora <span className="text-gradient-gold">Press</span>
+          <span className="font-display text-xl md:text-2xl tracking-wide">
+            True American <span className="text-gradient-gold">Publishers</span>
           </span>
         </a>
 

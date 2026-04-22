@@ -11,14 +11,14 @@ const About = () => {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">About Lumora</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">About True American Publishers</p>
             <h2 className="font-display text-5xl md:text-6xl leading-tight">
               We don't make books.<br />
               We make <span className="text-gradient-gold italic">legacies.</span>
             </h2>
             <div className="mt-8 space-y-5 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Lumora Press was founded by a team of ex-Big Five editors, Hollywood producers,
+                True American Publishers was founded by a team of ex-Big Five editors, Hollywood producers,
                 and growth marketers obsessed with one question:
                 <span className="text-foreground"> what if every book were treated like a blockbuster?</span>
               </p>

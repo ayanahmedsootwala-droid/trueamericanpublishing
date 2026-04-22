@@ -17,7 +17,7 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Lumora Press",
+    name: "True American Publishers",
     description:
       "Cinematic publishing studio offering ghostwriting, publishing, marketing, cover design and audiobook production for ambitious authors.",
     url: "/",

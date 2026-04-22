@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 backdrop-blur-sm animate-fade-in">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="text-xs uppercase tracking-[0.2em] text-primary/90">
-              The Studio for Storytellers
+              True American Publishers
             </span>
           </div>
 
@@ -52,8 +52,8 @@ const Hero = () => {
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Lumora Press is a cinematic publishing studio that transforms ambitious authors
-            into category-defining voices — from first draft to global bestseller.
+            True American Publishers is a cinematic publishing studio that transforms ambitious
+            authors into category-defining voices — from first draft to global bestseller.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
