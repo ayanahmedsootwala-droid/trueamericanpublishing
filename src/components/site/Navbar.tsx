@@ -68,14 +68,14 @@ const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-border bg-white/98 backdrop-blur-xl">
           <div className="container py-6 flex flex-col gap-4">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-muted-foreground hover:text-foreground"
+                className="text-base font-medium text-muted-foreground hover:text-primary"
               >
                 {l.label}
               </a>

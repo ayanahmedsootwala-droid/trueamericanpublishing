@@ -95,56 +95,63 @@ const tiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative py-32 overflow-hidden">
+    <section id="pricing" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container">
         <div className="max-w-2xl mx-auto text-center reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Packages</p>
-          <h2 className="font-display text-5xl md:text-6xl leading-tight">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Packages</p>
+          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
             Choose your<br />
-            <span className="text-gradient-gold italic">level of legacy.</span>
+            <span className="text-gradient-crimson italic">level of legacy.</span>
           </h2>
           <p className="mt-6 text-muted-foreground text-lg">
             Transparent pricing. Concierge execution. No template-driven shortcuts.
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {tiers.map((t, i) => (
             <div
               key={t.name}
               className={`reveal relative rounded-2xl p-8 flex flex-col transition-all duration-500 ${
                 t.featured
-                  ? "glass-card border border-primary/40 shadow-gold z-10 bg-gradient-to-b from-primary/[0.06] to-transparent"
-                  : "glass-card glow-border hover:-translate-y-1"
+                  ? "bg-gradient-to-b from-primary/[0.04] to-white border-2 border-primary shadow-crimson z-10"
+                  : "premium-card"
               }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
               {t.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-gradient-gold px-4 py-1 text-xs font-bold text-primary-foreground shadow-glow-gold">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-gradient-crimson px-4 py-1 text-xs font-bold text-primary-foreground shadow-glow-crimson">
                   <Crown className="h-3.5 w-3.5" />
                   Most Popular
                 </div>
               )}
 
               <div>
-                <h3 className="font-display text-3xl">{t.name}</h3>
+                <h3 className="font-display text-3xl font-bold">{t.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{t.tagline}</p>
               </div>
 
-              <div className="mt-8 pb-8 border-b border-border/60">
+              <div className="mt-8 pb-8 border-b border-border">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-gradient-gold">{t.price}</span>
-                  {t.price !== "Custom" && <span className="text-sm text-muted-foreground">starting</span>}
+                  <span className="font-display text-5xl text-gradient-crimson font-bold">{t.price}</span>
+                  <span className="text-sm text-muted-foreground">starting</span>
                 </div>
               </div>
 
               <ul className="mt-8 space-y-3 flex-1">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm">
-                    <span className={`mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full ${t.featured ? "bg-gradient-gold" : "bg-primary/15"}`}>
-                      <Check className={`h-3 w-3 ${t.featured ? "text-primary-foreground" : "text-primary"}`} strokeWidth={3} />
+                    <span
+                      className={`mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full shrink-0 ${
+                        t.featured ? "bg-gradient-crimson" : "bg-primary/10"
+                      }`}
+                    >
+                      <Check
+                        className={`h-3 w-3 ${t.featured ? "text-primary-foreground" : "text-primary"}`}
+                        strokeWidth={3}
+                      />
                     </span>
                     <span className="text-foreground/85">{f}</span>
                   </li>
