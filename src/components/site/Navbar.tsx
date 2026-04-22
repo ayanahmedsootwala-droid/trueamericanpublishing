@@ -25,17 +25,17 @@ const Navbar = () => {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-background/70 border-b border-border/60"
+          ? "backdrop-blur-xl bg-white/85 border-b border-border shadow-soft"
           : "bg-transparent"
       }`}
     >
       <nav className="container flex items-center justify-between h-20">
         <a href="#top" className="flex items-center gap-2 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-gold shadow-glow-gold">
+          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-crimson shadow-glow-crimson">
             <span className="font-display text-xl text-primary-foreground font-bold">T</span>
           </span>
-          <span className="font-display text-xl md:text-2xl tracking-wide">
-            True American <span className="text-gradient-gold">Publishers</span>
+          <span className="font-display text-lg md:text-xl tracking-tight font-bold">
+            True American <span className="text-gradient-crimson">Publishers</span>
           </span>
         </a>
 
@@ -44,10 +44,10 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-gold transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-crimson transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
@@ -68,14 +68,14 @@ const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-border bg-white/98 backdrop-blur-xl">
           <div className="container py-6 flex flex-col gap-4">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-muted-foreground hover:text-foreground"
+                className="text-base font-medium text-muted-foreground hover:text-primary"
               >
                 {l.label}
               </a>

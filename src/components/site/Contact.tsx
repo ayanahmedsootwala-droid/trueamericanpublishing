@@ -46,19 +46,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[800px] bg-secondary/20 blur-[140px] rounded-full" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] bg-primary/15 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-primary/5 blur-[140px] rounded-full" />
       </div>
 
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-2 reveal">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Begin</p>
-            <h2 className="font-display text-5xl md:text-6xl leading-tight">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Begin</p>
+            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
               Your story is<br />
-              <span className="text-gradient-gold italic">waiting.</span>
+              <span className="text-gradient-crimson italic">waiting.</span>
             </h2>
             <p className="mt-6 text-muted-foreground text-lg">
               Tell us about your book. We respond to every serious inquiry within 24 hours with
@@ -67,12 +66,12 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "hello@lumorapress.com" },
+                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "New York · London · Los Angeles" },
               ].map(({ Icon, label }) => (
                 <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-white">
                     <Icon className="h-4 w-4 text-primary" />
                   </span>
                   {label}
@@ -83,7 +82,7 @@ const Contact = () => {
 
           <form
             onSubmit={onSubmit}
-            className="lg:col-span-3 reveal glass-card glow-border rounded-2xl p-8 md:p-10"
+            className="lg:col-span-3 reveal premium-card rounded-2xl p-8 md:p-10"
           >
             <div className="grid md:grid-cols-2 gap-5">
               <div className="space-y-2">
