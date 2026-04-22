@@ -99,14 +99,16 @@ const Pricing = () => {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container">
-        <div className="max-w-2xl mx-auto text-center reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Packages</p>
+        <div className="max-w-3xl mx-auto text-center reveal">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Investment Tiers</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
-            Choose your<br />
-            <span className="text-gradient-crimson italic">level of legacy.</span>
+            Crafted with intention.<br />
+            <span className="text-gradient-crimson italic">Priced with respect.</span>
           </h2>
-          <p className="mt-6 text-muted-foreground text-lg">
-            Transparent pricing. Concierge execution. No template-driven shortcuts.
+          <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            Six curated tiers — each engineered for a specific stage of the author journey.
+            No upsells. No hidden retainers. Only senior talent, transparent scopes, and a
+            single dedicated producer guiding your manuscript from first draft to the world stage.
           </p>
         </div>
 
@@ -170,9 +172,24 @@ const Pricing = () => {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-sm text-muted-foreground reveal">
-          Flexible payment plans available · 100% satisfaction guarantee · NDA on every project
-        </p>
+        <div className="mt-16 reveal max-w-3xl mx-auto text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-border bg-white px-8 py-5 shadow-soft">
+            <span className="text-sm text-foreground/80">
+              <span className="text-primary font-bold">·</span> Flexible installment plans
+            </span>
+            <span className="hidden md:inline text-border">|</span>
+            <span className="text-sm text-foreground/80">
+              <span className="text-primary font-bold">·</span> 100% satisfaction guarantee
+            </span>
+            <span className="hidden md:inline text-border">|</span>
+            <span className="text-sm text-foreground/80">
+              <span className="text-primary font-bold">·</span> Mutual NDA on every engagement
+            </span>
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground italic font-display">
+            Not seeing the right fit? Our concierge team can architect a bespoke arrangement around your manuscript and ambitions.
+          </p>
+        </div>
       </div>
     </section>
   );

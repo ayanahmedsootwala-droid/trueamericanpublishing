@@ -1,4 +1,6 @@
 import { useState } from "react";
+import stackImg from "@/assets/editorial/stack.jpg";
+import floatingBook from "@/assets/editorial/floating-book.jpg";
 import b1 from "@/assets/genre/biz-1.jpg";
 import b2 from "@/assets/genre/biz-2.jpg";
 import b3 from "@/assets/genre/biz-3.jpg";
@@ -77,18 +79,36 @@ const Portfolio = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[420px] w-[800px] bg-gradient-radial-crimson blur-3xl opacity-60" />
 
       <div className="container relative">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
-          <div className="max-w-2xl">
+        <div className="grid lg:grid-cols-12 gap-10 items-end reveal">
+          <div className="lg:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Our Work</p>
             <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
               Bestsellers across<br />
               <span className="text-gradient-crimson italic">every category.</span>
             </h2>
+            <p className="mt-6 text-muted-foreground max-w-xl text-lg leading-relaxed">
+              From boardroom manifestos to BookTok love stories — explore the four worlds
+              where our authors are quietly redefining what a bestseller looks like in
+              the modern publishing era.
+            </p>
           </div>
-          <p className="text-muted-foreground max-w-md">
-            From boardroom manifestos to BookTok love stories — explore the four genres where
-            our authors are dominating today.
-          </p>
+
+          {/* Editorial pictorial — premium book stack */}
+          <div className="lg:col-span-5 relative h-[280px] md:h-[360px] rounded-2xl overflow-hidden shadow-elegant group">
+            <img
+              src={stackImg}
+              alt="Stack of premium leather-bound books with gold-edged pages"
+              loading="lazy"
+              width={800}
+              height={1000}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <p className="text-xs uppercase tracking-[0.25em] text-primary font-bold">Crafted to Endure</p>
+              <p className="font-display text-xl text-foreground mt-1">Heirloom-quality publishing.</p>
+            </div>
+          </div>
         </div>
 
         {/* Genre tabs */}
@@ -151,6 +171,32 @@ const Portfolio = () => {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Closing editorial pictorial */}
+        <div className="mt-24 reveal grid md:grid-cols-2 gap-10 items-center">
+          <div className="relative aspect-square md:aspect-auto md:h-[420px] rounded-2xl overflow-hidden shadow-elegant">
+            <img
+              src={floatingBook}
+              alt="Open book floating with pages turning and golden light emanating"
+              loading="lazy"
+              width={1000}
+              height={1000}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">The Quiet Standard</p>
+            <h3 className="font-display text-3xl md:text-4xl leading-tight font-bold">
+              Every cover is a <span className="text-gradient-crimson italic">first impression</span> the reader will remember forever.
+            </h3>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Our in-house art directors design book covers the way studios design movie posters —
+              with intent, mood, and a fierce understanding of the genre's iconography. Each
+              concept goes through three rounds of refinement before it ever sees Amazon.
+            </p>
+          </div>
         </div>
       </div>
     </section>
