@@ -26,7 +26,7 @@ function Book({
 
   return (
     <Float speed={1.4} rotationIntensity={0.4} floatIntensity={0.8}>
-      <group ref={ref} position={position} rotation={rotation} scale={scale}>
+      <group ref={ref as any} position={position} rotation={rotation} scale={scale}>
         <mesh position={[0, 0, 0.16]} castShadow receiveShadow>
           <boxGeometry args={[1.4, 2, 0.04]} />
           <meshStandardMaterial attach="material" color={color} roughness={0.32} metalness={0.18} />
@@ -106,7 +106,7 @@ function MagicBook({ scrollProgress }: { scrollProgress: { current: number } }) 
   });
 
   return (
-    <group ref={group} position={[0, -0.2, 0.6]}>
+    <group ref={group as any} position={[0, -0.2, 0.6]}>
       {/* Spine */}
       <mesh castShadow>
         <boxGeometry args={[0.06, 1.6, 0.18]} />
@@ -114,7 +114,7 @@ function MagicBook({ scrollProgress }: { scrollProgress: { current: number } }) 
       </mesh>
 
       {/* Left half */}
-      <group ref={leftPage} position={[-0.03, 0, 0]}>
+      <group ref={leftPage as any} position={[-0.03, 0, 0]}>
         <mesh position={[-0.6, 0, 0.08]} castShadow>
           <boxGeometry args={[1.2, 1.6, 0.04]} />
           <meshStandardMaterial attach="material" color="#C8102E" roughness={0.35} metalness={0.25} />
@@ -126,7 +126,7 @@ function MagicBook({ scrollProgress }: { scrollProgress: { current: number } }) 
       </group>
 
       {/* Right half */}
-      <group ref={rightPage} position={[0.03, 0, 0]}>
+      <group ref={rightPage as any} position={[0.03, 0, 0]}>
         <mesh position={[0.6, 0, 0.08]} castShadow>
           <boxGeometry args={[1.2, 1.6, 0.04]} />
           <meshStandardMaterial attach="material" color="#C8102E" roughness={0.35} metalness={0.25} />
@@ -138,7 +138,7 @@ function MagicBook({ scrollProgress }: { scrollProgress: { current: number } }) 
       </group>
 
       {/* Inner glow */}
-      <pointLight ref={glow} position={[0, 0.2, 0.6]} color="#F5D27E" intensity={0.5} distance={4} />
+      <pointLight ref={glow as any} position={[0, 0.2, 0.6]} color="#F5D27E" intensity={0.5} distance={4} />
       <Sparkles count={50} scale={[1.6, 2, 1]} size={3.2} speed={0.6} color="#F5D27E" position={[0, 0.4, 0.5]} />
     </group>
   );
@@ -230,7 +230,7 @@ function Scene({ scrollProgress }: { scrollProgress: { current: number } }) {
   );
 
   return (
-    <group ref={group}>
+    <group ref={group as any}>
       {/* Centerpiece magic book */}
       <MagicBook scrollProgress={scrollProgress} />
 
