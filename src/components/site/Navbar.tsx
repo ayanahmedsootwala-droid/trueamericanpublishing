@@ -27,53 +27,38 @@ const Navbar = () => {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-2xl bg-white/85 border-b border-border/60 shadow-soft"
+          ? "backdrop-blur-2xl bg-white/90 border-b border-border/60 shadow-soft"
           : "bg-transparent"
       }`}
     >
-      {/* Slim announcement strip */}
-      <div className={`hidden md:block transition-all duration-500 ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-8 opacity-100"}`}>
-        <div className="container flex items-center justify-between h-8 text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            Now booking Q2 author slots — limited availability
-          </span>
-          <a href="tel:+12125550188" className="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
-            <Phone className="h-3 w-3" /> +1 (212) 555-0188
-          </a>
-        </div>
-      </div>
-
       <nav className="container flex items-center justify-between h-20">
-        <a href="#top" className="flex items-center gap-3 group">
-          <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-soft ring-1 ring-primary/20 p-1.5 transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105">
-            <img
-              src={logo}
-              alt="True American Publishers logo — ghost rising from open book with quill"
-              width={48}
-              height={48}
-              className="h-full w-full object-contain"
-            />
-          </span>
-          <span className="font-display text-base md:text-xl tracking-tight font-bold leading-tight">
+        <a href="#top" className="flex items-center gap-2.5 group">
+          <img
+            src={logo}
+            alt="True American Publishers logo"
+            width={48}
+            height={48}
+            className="h-11 w-11 md:h-12 md:w-12 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_4px_12px_hsl(var(--primary)/0.2)]"
+          />
+          <span className="font-display text-base md:text-lg tracking-tight font-bold leading-tight">
             True American <span className="text-gradient-crimson">Publishers</span>
           </span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-crimson transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gradient-crimson transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+12125550188"
             className="text-sm font-medium text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"

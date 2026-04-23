@@ -55,9 +55,9 @@ const About = () => {
                   same firepower as a New York Times bestseller?</span>
               </p>
               <p>
-                A decade later, we're a fully integrated eBook studio with offices in
-                <span className="text-foreground font-medium"> New York, London and Los Angeles</span>,
-                a roster of 60+ specialized writers, in-house art directors, audio producers, and a
+                A decade later, we're a fully integrated eBook studio headquartered in
+                <span className="text-foreground font-medium"> Sugarland, Texas</span>,
+                with a roster of 60+ specialized writers, in-house art directors, audio producers, and a
                 dedicated marketing arm that has placed books in <span className="text-foreground font-medium">USA Today, Wall Street Journal,
                 NYT, Amazon #1, BookTok and Audible top-10</span> charts.
               </p>
