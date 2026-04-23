@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,7 +8,13 @@ import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
-const HeroScene = lazy(() => import("./HeroScene"));
+import biz1 from "@/assets/genre/biz-1.jpg";
+import thriller1 from "@/assets/genre/thriller-1.jpg";
+import fantasy1 from "@/assets/genre/fantasy-1.jpg";
+import romance1 from "@/assets/genre/romance-1.jpg";
+import memoir1 from "@/assets/genre/memoir-1.jpg";
+import historical1 from "@/assets/genre/historical-1.jpg";
+import ya1 from "@/assets/genre/ya-1.jpg";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),
@@ -17,25 +23,19 @@ const quoteSchema = z.object({
   details: z.string().trim().min(10, "Add a few words about your book").max(500),
 });
 
-const Hero = () => {
-  const sceneRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useRef(0);
-  const [loading, setLoading] = useState(false);
+// Real AI book-cover collage replacing the previous 3D scene
+const heroBooks = [
+  { src: biz1, alt: "Business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-40 md:w-48 rotate-[-6deg]", delay: "0s" },
+  { src: thriller1, alt: "Thriller book cover", className: "top-10 left-0 w-36 md:w-44 rotate-[-14deg]", delay: "0.2s" },
+  { src: fantasy1, alt: "Fantasy book cover", className: "top-12 right-0 w-36 md:w-44 rotate-[12deg]", delay: "0.4s" },
+  { src: romance1, alt: "Romance book cover", className: "bottom-8 left-6 w-32 md:w-40 rotate-[8deg]", delay: "0.6s" },
+  { src: memoir1, alt: "Memoir book cover", className: "bottom-0 left-1/2 -translate-x-1/2 w-40 md:w-52 rotate-[2deg] z-10", delay: "0.8s" },
+  { src: historical1, alt: "Historical fiction book cover", className: "bottom-6 right-4 w-32 md:w-40 rotate-[-10deg]", delay: "1s" },
+  { src: ya1, alt: "Young adult book cover", className: "top-1/2 -translate-y-1/2 -left-4 w-28 md:w-32 rotate-[18deg] hidden md:block", delay: "1.2s" },
+];
 
-  // Drives parallax + magic-book opening based on scroll
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      const max = 600;
-      scrollProgress.current = Math.min(1, y / max);
-      if (sceneRef.current) {
-        sceneRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
-        sceneRef.current.style.opacity = `${Math.max(0.2, 1 - y / 900)}`;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const Hero = () => {
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,37 +66,29 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="top"
-      className="relative min-h-[100vh] overflow-hidden bg-gradient-hero"
-    >
+    <section id="top" className="relative overflow-hidden bg-gradient-hero">
       {/* Decorative blobs */}
       <div className="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-[120px]" />
       <div className="absolute bottom-1/4 -right-32 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
+      <div className="absolute inset-0 bg-grid-faint opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
-      {/* Subtle grid */}
-      <div className="absolute inset-0 bg-grid-faint opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-
-      {/* Centered logo just under the navbar */}
+      {/* Centered logo just under the navbar — no outer tile */}
       <div className="relative z-10 pt-28 md:pt-32 flex justify-center">
         <a href="#top" className="group inline-flex flex-col items-center gap-3 animate-fade-in">
-          <span className="relative inline-flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-2xl bg-white shadow-elegant ring-1 ring-primary/20 p-2 transition-transform duration-500 group-hover:scale-105">
-            <img
-              src={logo}
-              alt="True American Publishers — ghost rising from open book with quill"
-              width={96}
-              height={96}
-              className="h-full w-full object-contain"
-            />
-            <span className="absolute inset-0 rounded-2xl bg-gradient-radial-crimson opacity-60 blur-xl -z-10" />
-          </span>
+          <img
+            src={logo}
+            alt="True American Publishers — ghost rising from open book with quill"
+            width={120}
+            height={120}
+            className="h-20 w-20 md:h-28 md:w-28 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_8px_24px_hsl(var(--primary)/0.25)]"
+          />
           <span className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-            Est. 2013 · New York · London · Los Angeles
+            Est. 2013 · Sugarland, Texas
           </span>
         </a>
       </div>
 
-      <div className="container relative pt-10 pb-16 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="container relative pt-12 pb-20 grid lg:grid-cols-12 gap-12 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -106,30 +98,23 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1
-            className="mt-8 font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] font-bold tracking-tight animate-fade-in-up text-foreground"
-          >
-            Stuck on chapter one?<br />
-            We turn it into a{" "}
+          <h1 className="mt-8 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] font-bold tracking-tight animate-fade-in-up text-foreground">
+            Your story deserves to be{" "}
             <span className="relative inline-block">
-              <span className="text-gradient-crimson italic">bestseller.</span>
+              <span className="text-gradient-crimson italic">read.</span>
               <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-crimson rounded-full opacity-70" />
             </span>
+            <br />
+            We make sure it is.
           </h1>
 
-          <p
-            className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Ghostwriting, editing, design, distribution, and Amazon marketing — under one roof.
-            Eleven years, fifty genres, and over two thousand authors who finally saw their book
-            on a shelf.
+          <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            From a blank page to a published bestseller — ghostwriting, editing, design,
+            distribution, and Amazon marketing under one roof. Eleven years, fifty genres,
+            two thousand authors who finally saw their book on a shelf.
           </p>
 
-          <div
-            className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
+          <div className="mt-9 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#quote">
                 Get My Free Quote
@@ -144,20 +129,14 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Trust bar */}
-          <div
-            className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 animate-fade-in"
-            style={{ animationDelay: "0.7s" }}
-          >
+          <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 animate-fade-in" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center gap-2">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                 ))}
               </div>
-              <span className="text-sm text-muted-foreground">
-                4.9 / 5 from 2,000+ authors
-              </span>
+              <span className="text-sm text-muted-foreground">4.9 / 5 from 2,000+ authors</span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-border" />
             <p className="text-sm text-muted-foreground">
@@ -167,25 +146,29 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right — 3D scene */}
-        <div
-          ref={sceneRef}
-          className="lg:col-span-5 relative h-[460px] md:h-[560px] lg:h-[640px] will-change-transform"
-        >
-          <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-80" />
-          <Suspense fallback={<div className="h-full w-full animate-pulse rounded-2xl bg-muted/40" />}>
-            <HeroScene scrollProgress={scrollProgress} />
-          </Suspense>
-
-          <div className="absolute top-4 right-2 hidden md:flex items-center gap-2 rounded-full bg-white/90 backdrop-blur border border-border px-3 py-1.5 shadow-soft animate-float">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium text-foreground">Scroll · the book opens</span>
+        {/* Right — real AI book-cover collage */}
+        <div className="lg:col-span-5 relative h-[460px] md:h-[540px]">
+          <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-60" />
+          <div className="relative h-full w-full">
+            {heroBooks.map((b, i) => (
+              <div
+                key={i}
+                className={`absolute ${b.className} animate-fade-in-up`}
+                style={{ animationDelay: b.delay }}
+              >
+                <div className="rounded-md overflow-hidden shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+                  <img
+                    src={b.src}
+                    alt={b.alt}
+                    loading="lazy"
+                    className="w-full h-auto block"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div
-            className="absolute bottom-6 left-2 hidden md:flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur border border-border px-4 py-3 shadow-elegant animate-float"
-            style={{ animationDelay: "1s" }}
-          >
+          <div className="absolute bottom-2 left-2 hidden md:flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur border border-border px-4 py-3 shadow-elegant animate-float z-20" style={{ animationDelay: "1s" }}>
             <BookOpen className="h-5 w-5 text-primary" />
             <div className="leading-tight">
               <div className="text-xs text-muted-foreground">Now distributing to</div>
@@ -195,7 +178,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Get-a-quote form, just beneath the hero */}
+      {/* Get-a-quote form */}
       <div id="quote" className="container relative pb-24">
         <div className="reveal in-view premium-card rounded-3xl p-6 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4">
@@ -236,12 +219,6 @@ const Hero = () => {
             </Button>
           </form>
         </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground animate-float">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="h-10 w-px bg-gradient-to-b from-primary to-transparent" />
       </div>
     </section>
   );

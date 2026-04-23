@@ -10,16 +10,14 @@ const Footer = () => {
       <div className="container relative">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-crimson shadow-glow-crimson p-1.5">
-                <img
-                  src={logo}
-                  alt="True American Publishers logo"
-                  width={44}
-                  height={44}
-                  className="h-full w-full object-contain brightness-0 invert"
-                />
-              </span>
+            <div className="flex items-center gap-2.5">
+              <img
+                src={logo}
+                alt="True American Publishers logo"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.25)]"
+              />
               <span className="font-display text-xl font-bold leading-tight">
                 True American <span className="text-gradient-crimson">Publishers</span>
               </span>
@@ -37,7 +35,7 @@ const Footer = () => {
                 <Phone className="h-4 w-4" /> +1 (212) 555-0188
               </a>
               <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> New York · London · Los Angeles
+                <MapPin className="h-4 w-4" /> Sugarland, Texas · USA
               </p>
             </div>
 
