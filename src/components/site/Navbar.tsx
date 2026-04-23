@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const links = [
@@ -27,19 +27,32 @@ const Navbar = () => {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-white/85 border-b border-border shadow-soft"
+          ? "backdrop-blur-2xl bg-white/85 border-b border-border/60 shadow-soft"
           : "bg-transparent"
       }`}
     >
+      {/* Slim announcement strip */}
+      <div className={`hidden md:block transition-all duration-500 ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-8 opacity-100"}`}>
+        <div className="container flex items-center justify-between h-8 text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            Now booking Q2 author slots — limited availability
+          </span>
+          <a href="tel:+12125550188" className="inline-flex items-center gap-1.5 hover:text-primary transition-colors">
+            <Phone className="h-3 w-3" /> +1 (212) 555-0188
+          </a>
+        </div>
+      </div>
+
       <nav className="container flex items-center justify-between h-20">
         <a href="#top" className="flex items-center gap-3 group">
-          <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-crimson shadow-glow-crimson p-1.5 transition-transform duration-500 group-hover:rotate-3">
+          <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-soft ring-1 ring-primary/20 p-1.5 transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105">
             <img
               src={logo}
               alt="True American Publishers logo — ghost rising from open book with quill"
-              width={44}
-              height={44}
-              className="h-full w-full object-contain brightness-0 invert"
+              width={48}
+              height={48}
+              className="h-full w-full object-contain"
             />
           </span>
           <span className="font-display text-base md:text-xl tracking-tight font-bold leading-tight">
@@ -60,9 +73,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="tel:+12125550188"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
+          >
+            <Phone className="h-4 w-4" /> (212) 555-0188
+          </a>
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Start Your Book</a>
+            <a href="#quote">Free Quote</a>
           </Button>
         </div>
 
@@ -89,7 +108,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" asChild className="mt-2">
-              <a href="#contact" onClick={() => setOpen(false)}>Start Your Book</a>
+              <a href="#quote" onClick={() => setOpen(false)}>Get My Free Quote</a>
             </Button>
           </div>
         </div>

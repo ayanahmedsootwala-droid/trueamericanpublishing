@@ -1,10 +1,12 @@
 import { Award, Users, Globe, BookOpen, ShieldCheck, Sparkles, Trophy, Building2 } from "lucide-react";
 
 const stats = [
-  { v: "300+", l: "Books Published", Icon: BookOpen },
-  { v: "37", l: "Bestsellers", Icon: Award },
-  { v: "14M+", l: "Copies Sold", Icon: Globe },
-  { v: "1,200+", l: "Happy Authors", Icon: Users },
+  { v: "600+", l: "Books Published", Icon: BookOpen },
+  { v: "11+", l: "Years Experience", Icon: Award },
+  { v: "50+", l: "Genres Covered", Icon: Globe },
+  { v: "2,000+", l: "Authors Onboard", Icon: Users },
+  { v: "100%", l: "Client Satisfaction", Icon: ShieldCheck },
+  { v: "40K+", l: "Retail Channels", Icon: Building2 },
 ];
 
 const values = [
