@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, BookOpen, Sparkles, Star, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
 import heroBiz from "@/assets/hero/hero-cover-gold-business.jpg";
 import heroRomance from "@/assets/hero/hero-cover-romance-studio.jpg";
@@ -32,7 +33,7 @@ const heroBooks = [
 const Hero = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = quoteSchema.safeParse({
@@ -50,14 +51,26 @@ const Hero = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    const { error } = await supabase.functions.invoke("send-lead-email", {
+      body: { ...parsed.data, source: "Hero quote form" },
+    });
+    setLoading(false);
+
+    if (error) {
+      toast({
+        title: "Could not send your request",
+        description: "Please email contact@trueamericanpublishers.com directly while we reconnect the form.",
+        variant: "destructive",
+      });
+      return;
+    }
+
       setLoading(false);
       (e.target as HTMLFormElement).reset();
       toast({
         title: "Quote request received",
         description: "A senior producer will email you a tailored proposal within 24 hours.",
       });
-    }, 900);
   };
 
   return (
