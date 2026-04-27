@@ -42,13 +42,13 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="relative py-28 md:py-32 overflow-hidden">
+    <section className="relative section-spacious overflow-hidden">
       <div className="absolute -top-20 right-0 h-[500px] w-[500px] bg-gradient-radial-crimson blur-3xl opacity-40" />
 
       <div className="container relative">
         <div className="max-w-2xl mx-auto text-center reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Author Voices</p>
-          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+          <p className="section-kicker mb-4">Author Voices</p>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
             Trusted by the<br />
             <span className="text-gradient-crimson italic">authors who matter.</span>
           </h2>

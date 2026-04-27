@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   :root {
     /* Crisp white background with warm undertone */
     --background: 0 0% 100%;
-    --foreground: 220 25% 10%;
+    --foreground: 222 24% 9%;
 
     --card: 0 0% 100%;
     --card-foreground: 220 25% 10%;
@@ -19,13 +19,13 @@
     --popover-foreground: 220 25% 10%;
 
     /* Crimson red — primary brand */
-    --primary: 350 82% 42%;
+    --primary: 350 84% 36%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 352 90% 55%;
-    --primary-deep: 348 88% 32%;
+    --primary-glow: 352 86% 50%;
+    --primary-deep: 348 88% 26%;
 
     /* Soft warm secondary */
-    --secondary: 14 90% 96%;
+    --secondary: 18 70% 97%;
     --secondary-foreground: 350 82% 32%;
     --secondary-glow: 350 70% 88%;
 
@@ -33,7 +33,7 @@
     --muted-foreground: 220 10% 42%;
 
     /* Warm gold accent for highlights */
-    --accent: 38 88% 52%;
+    --accent: 40 76% 48%;
     --accent-foreground: 220 25% 10%;
     --accent-glow: 42 95% 62%;
 
@@ -47,9 +47,9 @@
     --radius: 0.85rem;
 
     /* Premium gradients */
-    --gradient-hero: radial-gradient(ellipse at top right, hsl(350 82% 42% / 0.10), transparent 55%),
-                     radial-gradient(ellipse at bottom left, hsl(38 88% 52% / 0.08), transparent 55%),
-                     linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-hero: radial-gradient(ellipse at top right, hsl(350 84% 36% / 0.12), transparent 54%),
+                     radial-gradient(ellipse at 18% 76%, hsl(40 76% 48% / 0.10), transparent 46%),
+                     linear-gradient(180deg, hsl(0 0% 100%), hsl(18 70% 98%));
     --gradient-crimson: linear-gradient(135deg, hsl(350 82% 42%), hsl(352 90% 55%), hsl(348 88% 38%));
     --gradient-crimson-soft: linear-gradient(135deg, hsl(350 82% 42% / 0.10), hsl(352 90% 55% / 0.04));
     --gradient-card: linear-gradient(160deg, hsl(0 0% 100%), hsl(220 14% 98%));
@@ -58,7 +58,7 @@
 
     /* Shadows & glows — premium, soft */
     --shadow-crimson: 0 18px 50px -18px hsl(350 82% 42% / 0.45), 0 0 0 1px hsl(350 82% 42% / 0.06);
-    --shadow-elegant: 0 24px 60px -24px hsl(220 25% 10% / 0.18), 0 0 0 1px hsl(220 25% 10% / 0.04);
+    --shadow-elegant: 0 26px 70px -28px hsl(222 24% 9% / 0.22), 0 0 0 1px hsl(222 24% 9% / 0.045);
     --shadow-soft: 0 12px 30px -10px hsl(220 25% 10% / 0.12);
     --glow-crimson: 0 0 30px hsl(350 82% 42% / 0.35);
 
@@ -77,7 +77,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, hsl(350 82% 42% / 0.06), transparent),
       radial-gradient(ellipse 60% 50% at 100% 100%, hsl(38 88% 52% / 0.05), transparent);
@@ -91,8 +91,28 @@
 
 @layer components {
   .font-display {
-    font-family: 'Playfair Display', 'Times New Roman', serif;
-    letter-spacing: -0.015em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0;
+  }
+
+  .section-spacious {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .section-kicker {
+    @apply text-xs uppercase tracking-[0.28em] text-primary font-extrabold;
+  }
+
+  .studio-panel {
+    background:
+      linear-gradient(135deg, hsl(var(--card) / 0.96), hsl(var(--secondary) / 0.65)),
+      radial-gradient(circle at 20% 0%, hsl(var(--primary) / 0.08), transparent 34%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .editorial-rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-primary/25 to-transparent;
   }
 
   .text-gradient-crimson {
@@ -144,12 +164,12 @@
 
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    transform: translateY(34px) scale(0.985);
+    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
   }
   .reveal.in-view {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 
   .policy-prose h2 {
@@ -179,5 +199,14 @@
   .bg-dots {
     background-image: radial-gradient(hsl(220 25% 10% / 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
+  }
+  .bg-editorial-pattern {
+    background-image:
+      linear-gradient(135deg, hsl(var(--primary) / 0.05) 25%, transparent 25%),
+      linear-gradient(225deg, hsl(var(--primary) / 0.04) 25%, transparent 25%),
+      linear-gradient(45deg, hsl(var(--accent) / 0.04) 25%, transparent 25%),
+      linear-gradient(315deg, hsl(var(--accent) / 0.035) 25%, hsl(var(--background)) 25%);
+    background-position: 18px 0, 18px 0, 0 0, 0 0;
+    background-size: 36px 36px;
   }
 }
