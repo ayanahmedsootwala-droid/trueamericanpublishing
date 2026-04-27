@@ -28,8 +28,8 @@ const Footer = () => {
               marketing under one cinematic roof.
             </p>
             <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:contact@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" /> contact@trueamericanpublishers.com
+              <a href="mailto:hello@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail className="h-4 w-4" /> hello@trueamericanpublishers.com
               </a>
               <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> +1 (212) 555-0188
@@ -78,6 +78,10 @@ const Footer = () => {
               <li><a href="/#work" className="hover:text-primary transition-colors">Fantasy & Sci-Fi</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Romance</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Memoir & Biography</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Historical Fiction</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Children's Books</a></li>
+              <li><a href="/#work" className="hover:text-primary transition-colors">Poetry & Literary</a></li>
             </ul>
           </div>
 
@@ -120,7 +124,7 @@ const Footer = () => {
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Made in the USA · Trusted by 2,000+ authors worldwide
+            Made in the USA · Trusted by 1,200+ authors worldwide
           </p>
         </div>
       </div>

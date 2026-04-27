@@ -145,7 +145,7 @@ const Portfolio = () => {
   const current = genres.find((g) => g.id === active)!;
 
   return (
-    <section id="work" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
+    <section id="work" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[420px] w-[800px] bg-gradient-radial-crimson blur-3xl opacity-60" />
 
       <div className="container relative">
