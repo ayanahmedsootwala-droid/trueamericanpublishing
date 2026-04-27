@@ -34,7 +34,7 @@ const values = [
 
 const About = () => {
   return (
-    <section id="about" className="relative py-28 md:py-32 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-24 overflow-hidden">
       <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[500px] w-[500px] bg-gradient-radial-crimson blur-3xl opacity-50" />
 
       <div className="container relative">

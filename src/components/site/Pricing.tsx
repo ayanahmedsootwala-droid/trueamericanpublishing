@@ -144,7 +144,7 @@ const tiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
+    <section id="pricing" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container">
