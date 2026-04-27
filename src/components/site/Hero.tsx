@@ -15,6 +15,9 @@ import romance1 from "@/assets/genre/romance-1.jpg";
 import memoir1 from "@/assets/genre/memoir-1.jpg";
 import historical1 from "@/assets/genre/historical-1.jpg";
 import ya1 from "@/assets/genre/ya-1.jpg";
+import poetry1 from "@/assets/genre/poetry-1.jpg";
+import children2 from "@/assets/genre/children-2.jpg";
+import thriller3 from "@/assets/genre/thriller-3.jpg";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),
@@ -25,13 +28,16 @@ const quoteSchema = z.object({
 
 // Real AI book-cover collage replacing the previous 3D scene
 const heroBooks = [
-  { src: biz1, alt: "Business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-40 md:w-48 rotate-[-6deg]", delay: "0s" },
-  { src: thriller1, alt: "Thriller book cover", className: "top-10 left-0 w-36 md:w-44 rotate-[-14deg]", delay: "0.2s" },
-  { src: fantasy1, alt: "Fantasy book cover", className: "top-12 right-0 w-36 md:w-44 rotate-[12deg]", delay: "0.4s" },
-  { src: romance1, alt: "Romance book cover", className: "bottom-8 left-6 w-32 md:w-40 rotate-[8deg]", delay: "0.6s" },
-  { src: memoir1, alt: "Memoir book cover", className: "bottom-0 left-1/2 -translate-x-1/2 w-40 md:w-52 rotate-[2deg] z-10", delay: "0.8s" },
-  { src: historical1, alt: "Historical fiction book cover", className: "bottom-6 right-4 w-32 md:w-40 rotate-[-10deg]", delay: "1s" },
-  { src: ya1, alt: "Young adult book cover", className: "top-1/2 -translate-y-1/2 -left-4 w-28 md:w-32 rotate-[18deg] hidden md:block", delay: "1.2s" },
+  { src: biz1, alt: "Business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-36 md:w-44 rotate-[-5deg] z-20", delay: "0s" },
+  { src: thriller1, alt: "Thriller book cover", className: "top-10 left-2 w-32 md:w-40 rotate-[-13deg] z-10", delay: "0.15s" },
+  { src: fantasy1, alt: "Fantasy book cover", className: "top-12 right-1 w-32 md:w-40 rotate-[11deg] z-10", delay: "0.3s" },
+  { src: romance1, alt: "Romance book cover", className: "bottom-16 left-8 w-28 md:w-36 rotate-[8deg] z-20", delay: "0.45s" },
+  { src: memoir1, alt: "Memoir book cover", className: "bottom-4 left-1/2 -translate-x-1/2 w-36 md:w-48 rotate-[2deg] z-30", delay: "0.6s" },
+  { src: historical1, alt: "Historical fiction book cover", className: "bottom-14 right-6 w-28 md:w-36 rotate-[-10deg] z-20", delay: "0.75s" },
+  { src: ya1, alt: "Young adult book cover", className: "top-1/2 -translate-y-1/2 -left-4 w-24 md:w-30 rotate-[18deg] hidden md:block z-0", delay: "0.9s" },
+  { src: poetry1, alt: "Poetry book cover", className: "top-[42%] right-12 w-24 md:w-32 rotate-[-4deg] hidden sm:block z-0", delay: "1.05s" },
+  { src: children2, alt: "Children's book cover", className: "bottom-0 left-2 w-24 md:w-32 rotate-[-16deg] hidden md:block z-0", delay: "1.2s" },
+  { src: thriller3, alt: "Mystery book cover", className: "bottom-0 right-0 w-24 md:w-32 rotate-[15deg] hidden md:block z-0", delay: "1.35s" },
 ];
 
 const Hero = () => {
