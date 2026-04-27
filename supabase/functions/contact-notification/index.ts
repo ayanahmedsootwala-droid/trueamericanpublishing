@@ -43,8 +43,8 @@ serve(async (req) => {
 
     if (!apiKey) {
       console.log("Contact notification received", { source, name, email, project });
-      return new Response(JSON.stringify({ success: true, queued: false }), {
-        status: 200,
+      return new Response(JSON.stringify({ error: "Email delivery is not configured" }), {
+        status: 503,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
