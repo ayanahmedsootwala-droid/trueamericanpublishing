@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
@@ -18,7 +17,7 @@ const schema = z.object({
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
@@ -36,29 +35,18 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.functions.invoke("send-lead-email", {
-      body: { ...parsed.data, source: "Contact application form" },
-    });
-    setLoading(false);
-
-    if (error) {
+    setTimeout(() => {
+      setLoading(false);
+      (e.target as HTMLFormElement).reset();
       toast({
-        title: "Could not send your application",
-        description: "Please email contact@trueamericanpublishers.com directly while we reconnect the form.",
-        variant: "destructive",
+        title: "Application received",
+        description: "Our director will reach out within 24 hours.",
       });
-      return;
-    }
-
-    (e.target as HTMLFormElement).reset();
-    toast({
-      title: "Application received",
-      description: "Our director will reach out within 24 hours.",
-    });
+    }, 900);
   };
 
   return (
-    <section id="contact" className="relative section-spacious overflow-hidden bg-secondary/30">
+    <section id="contact" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-primary/5 blur-[140px] rounded-full" />
       </div>
@@ -66,8 +54,8 @@ const Contact = () => {
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-2 reveal">
-            <p className="section-kicker mb-4">Begin</p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Begin</p>
+            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
               Your story is<br />
               <span className="text-gradient-crimson italic">waiting.</span>
             </h2>
@@ -78,7 +66,7 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "contact@trueamericanpublishers.com" },
+                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "Sugarland, Texas · USA" },
               ].map(({ Icon, label }) => (
