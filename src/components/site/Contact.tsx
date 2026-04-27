@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
@@ -17,8 +18,9 @@ const schema = z.object({
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
       name: fd.get("name"),
@@ -35,14 +37,32 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    const { error } = await supabase.functions.invoke("contact-notification", {
+      body: {
+        source: "contact-form",
+        name: parsed.data.name,
+        email: parsed.data.email,
+        project: parsed.data.project,
+        message: parsed.data.message,
+      },
+    });
+
+    if (error) {
       setLoading(false);
-      (e.target as HTMLFormElement).reset();
       toast({
-        title: "Application received",
-        description: "Our director will reach out within 24 hours.",
+        title: "Submission could not be sent",
+        description: "Please email contact@trueamericanpublishers.com directly.",
+        variant: "destructive",
       });
-    }, 900);
+      return;
+    }
+
+    setLoading(false);
+    form.reset();
+    toast({
+      title: "Application received",
+      description: "Our director will reach out within 24 hours.",
+    });
   };
 
   return (
