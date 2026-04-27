@@ -7,6 +7,10 @@ import { ArrowRight, BookOpen, Sparkles, Star, ShieldCheck } from "lucide-react"
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
+import heroBiz from "@/assets/hero/hero-cover-gold-business.jpg";
+import heroRomance from "@/assets/hero/hero-cover-romance-studio.jpg";
+import heroFantasy from "@/assets/hero/hero-cover-fantasy-ebook.jpg";
+import heroNoir from "@/assets/hero/hero-cover-noir-manuscript.jpg";
 
 import biz1 from "@/assets/genre/biz-1.jpg";
 import thriller1 from "@/assets/genre/thriller-1.jpg";
@@ -23,15 +27,12 @@ const quoteSchema = z.object({
   details: z.string().trim().min(10, "Add a few words about your book").max(500),
 });
 
-// Real AI book-cover collage replacing the previous 3D scene
 const heroBooks = [
-  { src: biz1, alt: "Business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-40 md:w-48 rotate-[-6deg]", delay: "0s" },
-  { src: thriller1, alt: "Thriller book cover", className: "top-10 left-0 w-36 md:w-44 rotate-[-14deg]", delay: "0.2s" },
-  { src: fantasy1, alt: "Fantasy book cover", className: "top-12 right-0 w-36 md:w-44 rotate-[12deg]", delay: "0.4s" },
-  { src: romance1, alt: "Romance book cover", className: "bottom-8 left-6 w-32 md:w-40 rotate-[8deg]", delay: "0.6s" },
-  { src: memoir1, alt: "Memoir book cover", className: "bottom-0 left-1/2 -translate-x-1/2 w-40 md:w-52 rotate-[2deg] z-10", delay: "0.8s" },
-  { src: historical1, alt: "Historical fiction book cover", className: "bottom-6 right-4 w-32 md:w-40 rotate-[-10deg]", delay: "1s" },
-  { src: ya1, alt: "Young adult book cover", className: "top-1/2 -translate-y-1/2 -left-4 w-28 md:w-32 rotate-[18deg] hidden md:block", delay: "1.2s" },
+  { src: heroBiz, alt: "Premium business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-44 md:w-52 rotate-[-5deg] z-20", delay: "0s" },
+  { src: heroNoir, alt: "Premium suspense manuscript cover", className: "top-16 left-0 w-36 md:w-44 rotate-[-14deg] z-10", delay: "0.18s" },
+  { src: heroFantasy, alt: "Premium fantasy sci-fi book cover", className: "top-14 right-0 w-36 md:w-44 rotate-[12deg] z-10", delay: "0.36s" },
+  { src: heroRomance, alt: "Premium romance book cover", className: "bottom-2 left-10 w-36 md:w-44 rotate-[8deg] z-30", delay: "0.54s" },
+  { src: memoir1, alt: "Memoir book cover", className: "bottom-0 right-12 w-36 md:w-44 rotate-[-7deg] z-20", delay: "0.72s" },
 ];
 
 const Hero = () => {
@@ -88,7 +89,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="container relative pt-12 pb-20 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container relative pt-12 pb-24 grid lg:grid-cols-12 gap-14 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -98,20 +99,18 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-8 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] font-bold tracking-tight animate-fade-in-up text-foreground">
-            Your story deserves to be{" "}
+          <h1 className="mt-8 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.94] font-bold animate-fade-in-up text-foreground">
+            You have the idea.<br />
+            We build the book people{" "}
             <span className="relative inline-block">
-              <span className="text-gradient-crimson italic">read.</span>
+              <span className="text-gradient-crimson italic">cannot ignore.</span>
               <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-crimson rounded-full opacity-70" />
             </span>
-            <br />
-            We make sure it is.
           </h1>
 
           <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            From a blank page to a published bestseller — ghostwriting, editing, design,
-            distribution, and Amazon marketing under one roof. Eleven years, fifty genres,
-            two thousand authors who finally saw their book on a shelf.
+            A white-glove eBook and publishing studio for founders, experts, and storytellers who need
+            the manuscript, cover, launch, and market positioning to feel unmistakably premium.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
@@ -147,8 +146,9 @@ const Hero = () => {
         </div>
 
         {/* Right — real AI book-cover collage */}
-        <div className="lg:col-span-5 relative h-[460px] md:h-[540px]">
+        <div className="lg:col-span-5 relative h-[470px] md:h-[580px]">
           <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-60" />
+          <div className="absolute inset-x-8 bottom-0 h-28 rounded-[50%] bg-foreground/10 blur-2xl" />
           <div className="relative h-full w-full">
             {heroBooks.map((b, i) => (
               <div
@@ -156,7 +156,7 @@ const Hero = () => {
                 className={`absolute ${b.className} animate-fade-in-up`}
                 style={{ animationDelay: b.delay }}
               >
-                <div className="rounded-md overflow-hidden shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+                <div className="rounded-lg overflow-hidden shadow-elegant ring-1 ring-border bg-white p-1 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
                   <img
                     src={b.src}
                     alt={b.alt}
@@ -182,7 +182,7 @@ const Hero = () => {
       <div id="quote" className="container relative pb-24">
         <div className="reveal in-view premium-card rounded-3xl p-6 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Strategy Call</p>
+            <p className="section-kicker">Free Strategy Call</p>
             <h2 className="mt-3 font-display text-3xl md:text-4xl leading-tight font-bold">
               Get your <span className="text-gradient-crimson italic">tailored quote</span> in 24 hours.
             </h2>
