@@ -12,13 +12,7 @@ import heroRomance from "@/assets/hero/hero-cover-romance-studio.jpg";
 import heroFantasy from "@/assets/hero/hero-cover-fantasy-ebook.jpg";
 import heroNoir from "@/assets/hero/hero-cover-noir-manuscript.jpg";
 
-import biz1 from "@/assets/genre/biz-1.jpg";
-import thriller1 from "@/assets/genre/thriller-1.jpg";
-import fantasy1 from "@/assets/genre/fantasy-1.jpg";
-import romance1 from "@/assets/genre/romance-1.jpg";
 import memoir1 from "@/assets/genre/memoir-1.jpg";
-import historical1 from "@/assets/genre/historical-1.jpg";
-import ya1 from "@/assets/genre/ya-1.jpg";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),
