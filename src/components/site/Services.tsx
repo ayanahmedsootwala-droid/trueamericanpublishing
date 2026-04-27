@@ -45,7 +45,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-28 md:py-32 overflow-hidden">
+    <section id="services" className="relative py-20 md:py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid-faint opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       <div className="container relative">

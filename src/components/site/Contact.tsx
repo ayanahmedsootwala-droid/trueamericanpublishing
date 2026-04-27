@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
@@ -17,8 +18,9 @@ const schema = z.object({
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
       name: fd.get("name"),
@@ -35,18 +37,36 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    const { error } = await supabase.functions.invoke("contact-notification", {
+      body: {
+        source: "contact-form",
+        name: parsed.data.name,
+        email: parsed.data.email,
+        project: parsed.data.project,
+        message: parsed.data.message,
+      },
+    });
+
+    if (error) {
       setLoading(false);
-      (e.target as HTMLFormElement).reset();
       toast({
-        title: "Application received",
-        description: "Our director will reach out within 24 hours.",
+        title: "Submission could not be sent",
+        description: "Please email contact@trueamericanpublishers.com directly.",
+        variant: "destructive",
       });
-    }, 900);
+      return;
+    }
+
+    setLoading(false);
+    form.reset();
+    toast({
+      title: "Application received",
+      description: "Our director will reach out within 24 hours.",
+    });
   };
 
   return (
-    <section id="contact" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
+    <section id="contact" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-primary/5 blur-[140px] rounded-full" />
       </div>
@@ -66,7 +86,7 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
+                { Icon: Mail, label: "contact@trueamericanpublishers.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "Sugarland, Texas · USA" },
               ].map(({ Icon, label }) => (
