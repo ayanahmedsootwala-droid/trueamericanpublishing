@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-28 md:py-32 overflow-hidden bg-secondary/30">
+    <section id="contact" className="relative section-spacious overflow-hidden bg-secondary/30">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-primary/5 blur-[140px] rounded-full" />
       </div>
@@ -54,8 +54,8 @@ const Contact = () => {
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-2 reveal">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Begin</p>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            <p className="section-kicker mb-4">Begin</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
               Your story is<br />
               <span className="text-gradient-crimson italic">waiting.</span>
             </h2>
