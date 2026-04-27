@@ -145,14 +145,14 @@ const Portfolio = () => {
   const current = genres.find((g) => g.id === active)!;
 
   return (
-    <section id="work" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
+    <section id="work" className="relative section-spacious overflow-hidden bg-secondary/35">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[420px] w-[800px] bg-gradient-radial-crimson blur-3xl opacity-60" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-12 gap-10 items-end reveal">
           <div className="lg:col-span-7">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Our Work</p>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            <p className="section-kicker mb-4">Our Work</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
               Bestsellers across<br />
               <span className="text-gradient-crimson italic">every category.</span>
             </h2>
@@ -181,7 +181,7 @@ const Portfolio = () => {
         </div>
 
         {/* Genre tabs */}
-        <div className="mt-12 flex flex-wrap gap-3 reveal">
+        <div className="mt-14 flex flex-wrap gap-3 reveal">
           {genres.map((g) => {
             const Icon = g.icon;
             const isActive = g.id === active;
@@ -189,7 +189,7 @@ const Portfolio = () => {
               <button
                 key={g.id}
                 onClick={() => setActive(g.id)}
-                className={`group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium border transition-all duration-300 ${
+                className={`group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold border transition-all duration-300 ${
                   isActive
                     ? "bg-gradient-crimson text-primary-foreground border-transparent shadow-crimson"
                     : "bg-white text-foreground border-border hover:border-primary/50 hover:text-primary"
@@ -209,7 +209,7 @@ const Portfolio = () => {
         {/* Book grid */}
         <div
           key={current.id}
-          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+          className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12"
           style={{ perspective: "1500px" }}
         >
           {current.books.map((b, i) => (
@@ -243,7 +243,7 @@ const Portfolio = () => {
         </div>
 
         {/* Closing editorial pictorial */}
-        <div className="mt-24 reveal grid md:grid-cols-2 gap-10 items-center">
+        <div className="mt-28 reveal grid md:grid-cols-2 gap-12 items-center studio-panel rounded-3xl p-5 md:p-8">
           <div className="relative aspect-square md:aspect-auto md:h-[420px] rounded-2xl overflow-hidden shadow-elegant">
             <img
               src={floatingBook}
@@ -256,7 +256,7 @@ const Portfolio = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">The Quiet Standard</p>
+            <p className="section-kicker mb-4">The Quiet Standard</p>
             <h3 className="font-display text-3xl md:text-4xl leading-tight font-bold">
               Every cover is a <span className="text-gradient-crimson italic">first impression</span> the reader will remember forever.
             </h3>

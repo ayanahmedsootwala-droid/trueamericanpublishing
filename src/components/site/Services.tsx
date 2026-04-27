@@ -45,13 +45,13 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-20 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-grid-faint opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+    <section id="services" className="relative section-spacious overflow-hidden">
+      <div className="absolute inset-0 bg-editorial-pattern opacity-45 [mask-image:linear-gradient(180deg,transparent,black_12%,black_88%,transparent)]" />
 
       <div className="container relative">
         <div className="max-w-2xl reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">What We Do</p>
-          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+          <p className="section-kicker mb-4">What We Do</p>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
             Eight disciplines.<br />
             <span className="text-gradient-crimson italic">One unstoppable book.</span>
           </h2>
@@ -60,11 +60,11 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
           {services.map((s, i) => (
             <article
               key={s.title}
-              className="reveal premium-card group relative rounded-2xl p-7 overflow-hidden"
+              className="reveal premium-card group relative rounded-2xl p-7 overflow-hidden min-h-[245px]"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

@@ -20,7 +20,6 @@ const Contact = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
       name: fd.get("name"),
@@ -37,28 +36,21 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.functions.invoke("contact-notification", {
-      body: {
-        source: "contact-form",
-        name: parsed.data.name,
-        email: parsed.data.email,
-        project: parsed.data.project,
-        message: parsed.data.message,
-      },
+    const { error } = await supabase.functions.invoke("send-lead-email", {
+      body: { ...parsed.data, source: "Contact application form" },
     });
+    setLoading(false);
 
     if (error) {
-      setLoading(false);
       toast({
-        title: "Submission could not be sent",
-        description: "Please email contact@trueamericanpublishers.com directly.",
+        title: "Could not send your application",
+        description: "Please email contact@trueamericanpublishers.com directly while we reconnect the form.",
         variant: "destructive",
       });
       return;
     }
 
-    setLoading(false);
-    form.reset();
+    (e.target as HTMLFormElement).reset();
     toast({
       title: "Application received",
       description: "Our director will reach out within 24 hours.",
@@ -66,7 +58,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
+    <section id="contact" className="relative section-spacious overflow-hidden bg-secondary/30">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-primary/5 blur-[140px] rounded-full" />
       </div>
@@ -74,8 +66,8 @@ const Contact = () => {
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-2 reveal">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Begin</p>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            <p className="section-kicker mb-4">Begin</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
               Your story is<br />
               <span className="text-gradient-crimson italic">waiting.</span>
             </h2>

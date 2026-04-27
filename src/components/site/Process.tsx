@@ -11,11 +11,11 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="relative py-20 md:py-24 overflow-hidden">
+    <section id="process" className="relative section-spacious overflow-hidden">
       <div className="container">
         <div className="max-w-2xl reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">The Journey</p>
-          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+          <p className="section-kicker mb-4">The Journey</p>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
             From spark to<br />
             <span className="text-gradient-crimson italic">screen-worthy.</span>
           </h2>
