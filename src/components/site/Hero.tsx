@@ -94,7 +94,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="container relative pt-12 pb-20 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container relative pt-10 pb-16 md:pb-20 grid lg:grid-cols-12 gap-12 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -104,7 +104,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-8 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] font-bold tracking-tight animate-fade-in-up text-foreground">
+          <h1 className="mt-8 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-bold animate-fade-in-up text-foreground">
             Your story deserves to be{" "}
             <span className="relative inline-block">
               <span className="text-gradient-crimson italic">read.</span>
@@ -153,7 +153,7 @@ const Hero = () => {
         </div>
 
         {/* Right — real AI book-cover collage */}
-        <div className="lg:col-span-5 relative h-[460px] md:h-[540px]">
+        <div className="lg:col-span-5 relative h-[520px] md:h-[620px]">
           <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-60" />
           <div className="relative h-full w-full">
             {heroBooks.map((b, i) => (
@@ -162,12 +162,12 @@ const Hero = () => {
                 className={`absolute ${b.className} animate-fade-in-up`}
                 style={{ animationDelay: b.delay }}
               >
-                <div className="rounded-md overflow-hidden shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+                <div className="aspect-[2/3] rounded-md overflow-hidden bg-white shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
                   <img
                     src={b.src}
                     alt={b.alt}
                     loading="lazy"
-                    className="w-full h-auto block"
+                    className="w-full h-full object-cover block"
                   />
                 </div>
               </div>
