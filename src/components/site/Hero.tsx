@@ -8,12 +8,17 @@ import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
-import heroBiz from "@/assets/hero/hero-cover-gold-business.jpg";
-import heroRomance from "@/assets/hero/hero-cover-romance-studio.jpg";
-import heroFantasy from "@/assets/hero/hero-cover-fantasy-ebook.jpg";
-import heroNoir from "@/assets/hero/hero-cover-noir-manuscript.jpg";
 
+import biz1 from "@/assets/genre/biz-1.jpg";
+import thriller1 from "@/assets/genre/thriller-1.jpg";
+import fantasy1 from "@/assets/genre/fantasy-1.jpg";
+import romance1 from "@/assets/genre/romance-1.jpg";
 import memoir1 from "@/assets/genre/memoir-1.jpg";
+import historical1 from "@/assets/genre/historical-1.jpg";
+import ya1 from "@/assets/genre/ya-1.jpg";
+import poetry1 from "@/assets/genre/poetry-1.jpg";
+import children2 from "@/assets/genre/children-2.jpg";
+import thriller3 from "@/assets/genre/thriller-3.jpg";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),
@@ -22,12 +27,18 @@ const quoteSchema = z.object({
   details: z.string().trim().min(10, "Add a few words about your book").max(500),
 });
 
+// Real AI book-cover collage replacing the previous 3D scene
 const heroBooks = [
-  { src: heroBiz, alt: "Premium business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-44 md:w-52 rotate-[-5deg] z-20", delay: "0s" },
-  { src: heroNoir, alt: "Premium suspense manuscript cover", className: "top-16 left-0 w-36 md:w-44 rotate-[-14deg] z-10", delay: "0.18s" },
-  { src: heroFantasy, alt: "Premium fantasy sci-fi book cover", className: "top-14 right-0 w-36 md:w-44 rotate-[12deg] z-10", delay: "0.36s" },
-  { src: heroRomance, alt: "Premium romance book cover", className: "bottom-2 left-10 w-36 md:w-44 rotate-[8deg] z-30", delay: "0.54s" },
-  { src: memoir1, alt: "Memoir book cover", className: "bottom-0 right-12 w-36 md:w-44 rotate-[-7deg] z-20", delay: "0.72s" },
+  { src: biz1, alt: "Business book cover", className: "top-0 left-1/2 -translate-x-1/2 w-36 md:w-44 rotate-[-5deg] z-20", delay: "0s" },
+  { src: thriller1, alt: "Thriller book cover", className: "top-10 left-2 w-32 md:w-40 rotate-[-13deg] z-10", delay: "0.15s" },
+  { src: fantasy1, alt: "Fantasy book cover", className: "top-12 right-1 w-32 md:w-40 rotate-[11deg] z-10", delay: "0.3s" },
+  { src: romance1, alt: "Romance book cover", className: "bottom-16 left-8 w-28 md:w-36 rotate-[8deg] z-20", delay: "0.45s" },
+  { src: memoir1, alt: "Memoir book cover", className: "bottom-4 left-1/2 -translate-x-1/2 w-36 md:w-48 rotate-[2deg] z-30", delay: "0.6s" },
+  { src: historical1, alt: "Historical fiction book cover", className: "bottom-14 right-6 w-28 md:w-36 rotate-[-10deg] z-20", delay: "0.75s" },
+  { src: ya1, alt: "Young adult book cover", className: "top-1/2 -translate-y-1/2 -left-4 w-24 md:w-30 rotate-[18deg] hidden md:block z-0", delay: "0.9s" },
+  { src: poetry1, alt: "Poetry book cover", className: "top-[42%] right-12 w-24 md:w-32 rotate-[-4deg] hidden sm:block z-0", delay: "1.05s" },
+  { src: children2, alt: "Children's book cover", className: "bottom-0 left-2 w-24 md:w-32 rotate-[-16deg] hidden md:block z-0", delay: "1.2s" },
+  { src: thriller3, alt: "Mystery book cover", className: "bottom-0 right-0 w-24 md:w-32 rotate-[15deg] hidden md:block z-0", delay: "1.35s" },
 ];
 
 const Hero = () => {
@@ -35,6 +46,7 @@ const Hero = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     const fd = new FormData(e.currentTarget);
     const parsed = quoteSchema.safeParse({
       name: fd.get("name"),
@@ -51,21 +63,28 @@ const Hero = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.functions.invoke("send-lead-email", {
-      body: { ...parsed.data, source: "Hero quote form" },
+    const { error } = await supabase.functions.invoke("contact-notification", {
+      body: {
+        source: "hero-quote",
+        name: parsed.data.name,
+        email: parsed.data.email,
+        project: parsed.data.genre,
+        message: parsed.data.details,
+      },
     });
-    setLoading(false);
 
     if (error) {
+      setLoading(false);
       toast({
-        title: "Could not send your request",
-        description: "Please email contact@trueamericanpublishers.com directly while we reconnect the form.",
+        title: "Submission could not be sent",
+        description: "Please email contact@trueamericanpublishers.com directly.",
         variant: "destructive",
       });
       return;
     }
 
-    (e.target as HTMLFormElement).reset();
+    setLoading(false);
+    form.reset();
     toast({
       title: "Quote request received",
       description: "A senior producer will email you a tailored proposal within 24 hours.",
@@ -95,7 +114,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="container relative pt-12 pb-24 grid lg:grid-cols-12 gap-14 items-center">
+      <div className="container relative pt-10 pb-16 md:pb-20 grid lg:grid-cols-12 gap-12 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -105,18 +124,20 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-8 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.94] font-bold animate-fade-in-up text-foreground">
-            You have the idea.<br />
-            We build the book people{" "}
+          <h1 className="mt-8 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-bold animate-fade-in-up text-foreground">
+            Your story deserves to be{" "}
             <span className="relative inline-block">
-              <span className="text-gradient-crimson italic">cannot ignore.</span>
+              <span className="text-gradient-crimson italic">read.</span>
               <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-crimson rounded-full opacity-70" />
             </span>
+            <br />
+            We make sure it is.
           </h1>
 
           <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            A white-glove eBook and publishing studio for founders, experts, and storytellers who need
-            the manuscript, cover, launch, and market positioning to feel unmistakably premium.
+            From a blank page to a published bestseller — ghostwriting, editing, design,
+            distribution, and Amazon marketing under one roof. Eleven years, fifty genres,
+            two thousand authors who finally saw their book on a shelf.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
@@ -152,9 +173,8 @@ const Hero = () => {
         </div>
 
         {/* Right — real AI book-cover collage */}
-        <div className="lg:col-span-5 relative h-[470px] md:h-[580px]">
+        <div className="lg:col-span-5 relative h-[520px] md:h-[620px]">
           <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-60" />
-          <div className="absolute inset-x-8 bottom-0 h-28 rounded-[50%] bg-foreground/10 blur-2xl" />
           <div className="relative h-full w-full">
             {heroBooks.map((b, i) => (
               <div
@@ -162,12 +182,12 @@ const Hero = () => {
                 className={`absolute ${b.className} animate-fade-in-up`}
                 style={{ animationDelay: b.delay }}
               >
-                <div className="rounded-lg overflow-hidden shadow-elegant ring-1 ring-border bg-white p-1 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+                <div className="aspect-[2/3] rounded-md overflow-hidden bg-white shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
                   <img
                     src={b.src}
                     alt={b.alt}
                     loading="lazy"
-                    className="w-full h-auto block"
+                    className="w-full h-full object-cover block"
                   />
                 </div>
               </div>
@@ -188,7 +208,7 @@ const Hero = () => {
       <div id="quote" className="container relative pb-24">
         <div className="reveal in-view premium-card rounded-3xl p-6 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4">
-            <p className="section-kicker">Free Strategy Call</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Strategy Call</p>
             <h2 className="mt-3 font-display text-3xl md:text-4xl leading-tight font-bold">
               Get your <span className="text-gradient-crimson italic">tailored quote</span> in 24 hours.
             </h2>

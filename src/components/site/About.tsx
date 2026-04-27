@@ -34,16 +34,16 @@ const values = [
 
 const About = () => {
   return (
-    <section id="about" className="relative section-spacious overflow-hidden">
+    <section id="about" className="relative py-20 md:py-24 overflow-hidden">
       <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[500px] w-[500px] bg-gradient-radial-crimson blur-3xl opacity-50" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
-            <p className="section-kicker mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">
               About True American Publishers
             </p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
+            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
               America's premium<br />
               <span className="text-gradient-crimson italic">eBook studio.</span>
             </h2>
@@ -62,7 +62,7 @@ const About = () => {
                 NYT, Amazon #1, BookTok and Audible top-10</span> charts.
               </p>
               <p>
-                We've helped over <span className="text-foreground font-semibold">1,200 authors</span> publish, market, and monetize their books across nine genres — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
+                We've helped over <span className="text-foreground font-semibold">2,000 authors</span> publish, market, and monetize their books across more than fifty genres — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
               </p>
               <blockquote className="border-l-2 border-primary pl-5 text-foreground font-display text-xl italic">
                 "Stories don't just sell — they shape decades."
@@ -102,8 +102,8 @@ const About = () => {
         {/* Values grid */}
         <div className="mt-24 reveal">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="section-kicker mb-4">What Sets Us Apart</p>
-            <h3 className="font-display text-4xl md:text-5xl leading-tight font-bold">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">What Sets Us Apart</p>
+            <h3 className="font-display text-3xl md:text-4xl leading-tight font-bold">
               Four standards we will <span className="text-gradient-crimson italic">never compromise.</span>
             </h3>
           </div>

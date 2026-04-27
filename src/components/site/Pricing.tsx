@@ -144,13 +144,13 @@ const tiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative section-spacious overflow-hidden bg-secondary/30">
+    <section id="pricing" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container">
         <div className="max-w-3xl mx-auto text-center reveal">
-          <p className="section-kicker mb-4">Investment Tiers</p>
-          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] font-bold">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Investment Tiers</p>
+          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
             Crafted with intention.<br />
             <span className="text-gradient-crimson italic">Priced with respect.</span>
           </h2>

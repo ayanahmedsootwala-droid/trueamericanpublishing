@@ -62,7 +62,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative section-spacious overflow-hidden">
+    <section id="faq" className="relative py-20 md:py-24 overflow-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="absolute top-1/3 left-0 h-[400px] w-[400px] bg-gradient-radial-crimson blur-3xl opacity-40" />
@@ -74,7 +74,7 @@ const FAQ = () => {
               <HelpCircle className="h-3.5 w-3.5" />
               FAQ
             </div>
-            <h2 className="mt-6 font-display text-5xl md:text-6xl leading-[0.98] font-bold">
+            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight font-bold">
               Everything you<br />
               <span className="text-gradient-crimson italic">wanted to ask.</span>
             </h2>
