@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const links = [
@@ -27,10 +27,17 @@ const Navbar = () => {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-2xl bg-white/90 border-b border-border/60 shadow-soft"
-          : "bg-transparent"
+          ? "backdrop-blur-2xl bg-white/92 border-b border-border/70 shadow-soft"
+          : "bg-white/70 backdrop-blur-xl"
       }`}
     >
+      <div className="hidden md:block border-b border-border/50 bg-foreground text-background">
+        <div className="container h-9 flex items-center justify-between text-[11px] font-semibold tracking-[0.18em] uppercase">
+          <span className="inline-flex items-center gap-2"><Sparkles className="h-3.5 w-3.5 text-accent" /> Premium author studio · Sugarland, Texas</span>
+          <span>600+ books published · 2,000+ authors onboard</span>
+        </div>
+      </div>
+
       <nav className="container flex items-center justify-between h-20">
         <a href="#top" className="flex items-center gap-2.5 group">
           <img
@@ -45,15 +52,15 @@ const Navbar = () => {
           </span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-1 rounded-full border border-border/80 bg-white/85 p-1 shadow-soft">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+              className="text-sm font-bold text-muted-foreground hover:text-primary transition-all relative rounded-full px-4 py-2 group"
             >
               {l.label}
-              <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gradient-crimson transition-all duration-300 group-hover:w-full" />
+              <span className="absolute inset-0 rounded-full bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </a>
           ))}
         </div>
