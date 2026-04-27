@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
@@ -17,7 +18,7 @@ const schema = z.object({
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
@@ -35,14 +36,25 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      (e.target as HTMLFormElement).reset();
+    const { error } = await supabase.functions.invoke("send-lead-email", {
+      body: { ...parsed.data, source: "Contact application form" },
+    });
+    setLoading(false);
+
+    if (error) {
       toast({
-        title: "Application received",
-        description: "Our director will reach out within 24 hours.",
+        title: "Could not send your application",
+        description: "Please email contact@trueamericanpublishers.com directly while we reconnect the form.",
+        variant: "destructive",
       });
-    }, 900);
+      return;
+    }
+
+    (e.target as HTMLFormElement).reset();
+    toast({
+      title: "Application received",
+      description: "Our director will reach out within 24 hours.",
+    });
   };
 
   return (
@@ -66,7 +78,7 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
+                { Icon: Mail, label: "contact@trueamericanpublishers.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "Sugarland, Texas · USA" },
               ].map(({ Icon, label }) => (
