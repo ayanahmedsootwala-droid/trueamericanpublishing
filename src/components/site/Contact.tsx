@@ -66,7 +66,7 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
+                { Icon: Mail, label: "contact@trueamericanpublishers.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "Sugarland, Texas · USA" },
               ].map(({ Icon, label }) => (
