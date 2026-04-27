@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, BookOpen, Sparkles, Star, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
 
 import biz1 from "@/assets/genre/biz-1.jpg";
@@ -43,8 +44,9 @@ const heroBooks = [
 const Hero = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     const fd = new FormData(e.currentTarget);
     const parsed = quoteSchema.safeParse({
       name: fd.get("name"),
@@ -61,14 +63,32 @@ const Hero = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    const { error } = await supabase.functions.invoke("contact-notification", {
+      body: {
+        source: "hero-quote",
+        name: parsed.data.name,
+        email: parsed.data.email,
+        project: parsed.data.genre,
+        message: parsed.data.details,
+      },
+    });
+
+    if (error) {
       setLoading(false);
-      (e.target as HTMLFormElement).reset();
       toast({
-        title: "Quote request received",
-        description: "A senior producer will email you a tailored proposal within 24 hours.",
+        title: "Submission could not be sent",
+        description: "Please email contact@trueamericanpublishers.com directly.",
+        variant: "destructive",
       });
-    }, 900);
+      return;
+    }
+
+    setLoading(false);
+    form.reset();
+    toast({
+      title: "Quote request received",
+      description: "A senior producer will email you a tailored proposal within 24 hours.",
+    });
   };
 
   return (
