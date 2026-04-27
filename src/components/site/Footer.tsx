@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border bg-secondary/40 pt-16 pb-10 overflow-hidden">
+    <footer className="relative border-t border-border bg-foreground text-background pt-20 pb-10 overflow-hidden">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] bg-gradient-radial-crimson blur-3xl opacity-30" />
 
       <div className="container relative">
@@ -18,18 +18,18 @@ const Footer = () => {
                 height={48}
                 className="h-12 w-12 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.25)]"
               />
-              <span className="font-display text-xl font-bold leading-tight">
-                True American <span className="text-gradient-crimson">Publishers</span>
+              <span className="font-display text-2xl font-bold leading-tight text-background">
+                True American <span className="text-accent">Publishers</span>
               </span>
             </div>
-            <p className="mt-5 text-sm text-muted-foreground max-w-sm leading-relaxed">
+            <p className="mt-5 text-sm text-background/70 max-w-sm leading-relaxed">
               America's premium eBook publishing studio — turning ambitious authors into
               category-defining voices since 2013. Ghostwriting, design, distribution and
               marketing under one cinematic roof.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:hello@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" /> hello@trueamericanpublishers.com
+            <div className="mt-6 space-y-2 text-sm text-background/70">
+              <a href="mailto:contact@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Mail className="h-4 w-4" /> contact@trueamericanpublishers.com
               </a>
               <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> +1 (212) 555-0188
@@ -120,11 +120,11 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-background/60">
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Made in the USA · Trusted by 1,200+ authors worldwide
+          <p className="text-xs text-background/60">
+            Made in the USA · Trusted by 2,000+ authors worldwide
           </p>
         </div>
       </div>
