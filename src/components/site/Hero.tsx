@@ -65,12 +65,11 @@ const Hero = () => {
       return;
     }
 
-      setLoading(false);
-      (e.target as HTMLFormElement).reset();
-      toast({
-        title: "Quote request received",
-        description: "A senior producer will email you a tailored proposal within 24 hours.",
-      });
+    (e.target as HTMLFormElement).reset();
+    toast({
+      title: "Quote request received",
+      description: "A senior producer will email you a tailored proposal within 24 hours.",
+    });
   };
 
   return (
