@@ -31,7 +31,7 @@ const Footer = () => {
               <a href="mailto:contact@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail className="h-4 w-4" /> contact@trueamericanpublishers.com
               </a>
-              <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone className="h-4 w-4" /> +1 (212) 555-0188
               </a>
               <p className="flex items-center gap-2">
@@ -50,7 +50,7 @@ const Footer = () => {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-background/15 bg-background/10 text-background/65 hover:text-accent hover:border-primary/50 transition-all"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -59,59 +59,59 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/#services" className="hover:text-primary transition-colors">eBook Writing</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Ghostwriting</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Cover Design</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Publishing</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Audiobooks</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Marketing</a></li>
+            <h4 className="text-sm font-semibold text-background mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-background/65">
+              <li><a href="/#services" className="hover:text-accent transition-colors">eBook Writing</a></li>
+              <li><a href="/#services" className="hover:text-accent transition-colors">Ghostwriting</a></li>
+              <li><a href="/#services" className="hover:text-accent transition-colors">Cover Design</a></li>
+              <li><a href="/#services" className="hover:text-accent transition-colors">Publishing</a></li>
+              <li><a href="/#services" className="hover:text-accent transition-colors">Audiobooks</a></li>
+              <li><a href="/#services" className="hover:text-accent transition-colors">Marketing</a></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Genres</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/#work" className="hover:text-primary transition-colors">Business & Self-Help</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Thriller & Mystery</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Fantasy & Sci-Fi</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Romance</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Memoir & Biography</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Historical Fiction</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Children's Books</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Poetry & Literary</a></li>
+            <h4 className="text-sm font-semibold text-background mb-4">Genres</h4>
+            <ul className="space-y-2 text-sm text-background/65">
+              <li><a href="/#work" className="hover:text-accent transition-colors">Business & Self-Help</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Thriller & Mystery</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Fantasy & Sci-Fi</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Romance</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Memoir & Biography</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Historical Fiction</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Young Adult</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Children's Books</a></li>
+              <li><a href="/#work" className="hover:text-accent transition-colors">Poetry & Literary</a></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/#work" className="hover:text-primary transition-colors">Our Work</a></li>
-              <li><a href="/#process" className="hover:text-primary transition-colors">Process</a></li>
-              <li><a href="/#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="/#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="/#faq" className="hover:text-primary transition-colors">FAQ</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
+            <h4 className="text-sm font-semibold text-background mb-4">Company</h4>
+            <ul className="space-y-2 text-sm text-background/65">
+              <li><a href="/#work" className="hover:text-accent transition-colors">Our Work</a></li>
+              <li><a href="/#process" className="hover:text-accent transition-colors">Process</a></li>
+              <li><a href="/#pricing" className="hover:text-accent transition-colors">Pricing</a></li>
+              <li><a href="/#about" className="hover:text-accent transition-colors">About</a></li>
+              <li><a href="/#faq" className="hover:text-accent transition-colors">FAQ</a></li>
+              <li><a href="/#contact" className="hover:text-accent transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Legal</h4>
+            <h4 className="text-sm font-semibold text-background mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/terms-and-conditions" className="text-background/65 hover:text-accent transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/privacy-policy" className="text-background/65 hover:text-accent transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refund-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/refund-policy" className="text-background/65 hover:text-accent transition-colors">
                   Refund Policy
                 </Link>
               </li>
@@ -119,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <div className="mt-12 pt-8 border-t border-background/15 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <p className="text-xs text-background/60">
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
