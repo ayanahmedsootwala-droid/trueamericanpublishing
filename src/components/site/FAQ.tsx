@@ -62,7 +62,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative py-28 md:py-32 overflow-hidden">
+    <section id="faq" className="relative py-20 md:py-24 overflow-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="absolute top-1/3 left-0 h-[400px] w-[400px] bg-gradient-radial-crimson blur-3xl opacity-40" />
@@ -87,7 +87,7 @@ const FAQ = () => {
             <div className="mt-8 premium-card rounded-2xl p-6">
               <p className="text-sm text-muted-foreground">
                 <span className="text-foreground font-semibold">Still have questions?</span>
-                <br />Email us at <a href="mailto:hello@trueamericanpublishers.com" className="text-primary hover:underline">hello@trueamericanpublishers.com</a> or book a free 30-minute publishing consultation.
+                <br />Email us at <a href="mailto:contact@trueamericanpublishers.com" className="text-primary hover:underline">contact@trueamericanpublishers.com</a> or book a free 30-minute publishing consultation.
               </p>
             </div>
           </div>
