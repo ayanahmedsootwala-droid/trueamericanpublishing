@@ -14,6 +14,8 @@ const schema = z.object({
   message: z.string().trim().min(10, "Add a bit more detail").max(1000),
 });
 
+const leadInbox = "trueamericanpublishers@gmail.com";
+
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +37,11 @@ const Contact = () => {
       return;
     }
     setLoading(true);
+    const subject = encodeURIComponent(`New author inquiry from ${parsed.data.name}`);
+    const body = encodeURIComponent(
+      `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nProject: ${parsed.data.project}\n\nMessage:\n${parsed.data.message}`,
+    );
+    window.location.href = `mailto:${leadInbox}?subject=${subject}&body=${body}`;
     setTimeout(() => {
       setLoading(false);
       (e.target as HTMLFormElement).reset();
@@ -66,7 +73,7 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "hello@trueamericanpublishers.com" },
+                { Icon: Mail, label: "trueamericanpublishers@gmail.com" },
                 { Icon: Phone, label: "+1 (212) 555-0188" },
                 { Icon: MapPin, label: "Sugarland, Texas · USA" },
               ].map(({ Icon, label }) => (
