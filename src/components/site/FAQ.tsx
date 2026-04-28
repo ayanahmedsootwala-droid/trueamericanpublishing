@@ -62,29 +62,27 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative py-20 md:py-24 overflow-hidden">
+    <section id="faq" className="relative py-16 md:py-20 overflow-hidden bg-muted/30">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="absolute top-1/3 left-0 h-[400px] w-[400px] bg-gradient-radial-crimson blur-3xl opacity-40" />
+      <div className="absolute top-1/4 left-0 h-[320px] w-[320px] bg-gradient-radial-crimson blur-3xl opacity-25" />
 
       <div className="container relative">
-        <div className="grid lg:grid-cols-12 gap-12">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           <div className="lg:col-span-4 reveal">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
               <HelpCircle className="h-3.5 w-3.5" />
               FAQ
             </div>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight font-bold">
-              Everything you<br />
-              <span className="text-gradient-crimson italic">wanted to ask.</span>
+            <h2 className="mt-5 font-display text-3xl md:text-4xl leading-tight font-semibold">
+              Clear answers before<br />
+              <span className="text-gradient-crimson italic">your first page.</span>
             </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              The honest answers to the questions every aspiring author asks before they trust
-              someone with their life's work. Still curious? Our concierge team replies to every
-              inquiry within one business day.
+            <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+              Practical details on ownership, timelines, publishing channels, privacy, and payment options — without the oversized clutter.
             </p>
 
-            <div className="mt-8 premium-card rounded-2xl p-6">
+            <div className="mt-7 rounded-xl border border-border bg-card p-5 shadow-soft">
               <p className="text-sm text-muted-foreground">
                 <span className="text-foreground font-semibold">Still have questions?</span>
                 <br />Email us at <a href="mailto:hello@trueamericanpublishers.com" className="text-primary hover:underline">hello@trueamericanpublishers.com</a> or book a free 30-minute publishing consultation.
@@ -93,17 +91,17 @@ const FAQ = () => {
           </div>
 
           <div className="lg:col-span-8 reveal">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="divide-y divide-border rounded-2xl border border-border bg-card px-5 md:px-6 shadow-soft">
               {faqs.map((f, i) => (
                 <AccordionItem
                   key={f.q}
                   value={`item-${i}`}
-                  className="premium-card rounded-2xl border-0 px-6 data-[state=open]:shadow-crimson"
+                  className="border-0 bg-transparent"
                 >
-                  <AccordionTrigger className="text-left font-display text-lg font-semibold py-5 hover:no-underline hover:text-primary">
+                  <AccordionTrigger className="text-left text-base md:text-[1.05rem] font-semibold py-4 hover:no-underline hover:text-primary">
                     {f.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5 text-base">
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4 text-sm md:text-[0.95rem]">
                     {f.a}
                   </AccordionContent>
                 </AccordionItem>
