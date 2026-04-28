@@ -45,6 +45,11 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
           glow: "hsl(var(--accent-glow))",
         },
+        footer: {
+          DEFAULT: "hsl(var(--footer))",
+          foreground: "hsl(var(--footer-foreground))",
+          muted: "hsl(var(--footer-muted))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
