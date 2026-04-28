@@ -73,7 +73,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-faint opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       {/* Centered logo just under the navbar — no outer tile */}
-      <div className="relative z-10 pt-28 md:pt-32 flex justify-center">
+      <div className="relative z-10 pt-24 md:pt-28 flex justify-center">
         <a href="#top" className="group inline-flex flex-col items-center gap-3 animate-fade-in">
           <img
             src={logo}
@@ -88,7 +88,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="container relative pt-12 pb-20 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container relative pt-8 pb-14 md:pb-18 grid lg:grid-cols-12 gap-10 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -98,8 +98,126 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-8 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] font-bold tracking-tight animate-fade-in-up text-foreground">
-            Your story deserves to be{" "}
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] font-bold animate-fade-in-up text-foreground">
+            Turn your manuscript into a book readers can't ignore — and publishers can't overlook.
+          </h1>
+
+          <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            From raw idea to professionally published eBook, our Sugarland studio handles the
+            writing, editing, cover design, distribution, and launch strategy that makes your story feel undeniable.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <Button variant="hero" size="xl" asChild>
+              <a href="#quote">
+                Claim My Free Publishing Plan
+                <ArrowRight className="ml-1" />
+              </a>
+            </Button>
+            <Button variant="ghostly" size="xl" asChild>
+              <a href="#work">
+                <BookOpen className="mr-1" />
+                See Our Work
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <span className="text-sm text-muted-foreground">4.9 / 5 from 2,000+ authors</span>
+            </div>
+            <div className="hidden sm:block h-6 w-px bg-border" />
+            <p className="text-sm text-muted-foreground">
+              <span className="text-foreground font-semibold">600+</span> titles published ·{" "}
+              <span className="text-foreground font-semibold">11+</span> years in print
+            </p>
+          </div>
+        </div>
+
+        {/* Right — real AI book-cover collage */}
+        <div className="lg:col-span-5 relative h-[380px] md:h-[500px]">
+          <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-55" />
+          <div className="relative h-full w-full">
+            {heroBooks.map((b, i) => (
+              <div
+                key={i}
+                className={`absolute ${b.className} animate-fade-in-up`}
+                style={{ animationDelay: b.delay }}
+              >
+                <div className="rounded-md overflow-hidden shadow-elegant ring-1 ring-black/5 animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+                  <img
+                    src={b.src}
+                    alt={b.alt}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="w-full h-auto block"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="absolute bottom-2 left-2 hidden md:flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur border border-border px-4 py-3 shadow-elegant animate-float z-40" style={{ animationDelay: "1s" }}>
+            <BookOpen className="h-5 w-5 text-primary" />
+            <div className="leading-tight">
+              <div className="text-xs text-muted-foreground">Free lead magnet</div>
+              <div className="text-sm font-semibold">Publishing plan in 24 hours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Get-a-quote form */}
+      <div id="quote" className="container relative pb-20 md:pb-24">
+        <div className="reveal in-view premium-card rounded-3xl p-6 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Lead Magnet</p>
+            <h2 className="mt-3 font-display text-2xl md:text-4xl leading-tight font-bold">
+              Get your <span className="text-gradient-crimson italic">Publishing Plan</span> in 24 hours.
+            </h2>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              Submit your details and receive a tailored roadmap covering your genre, timeline,
+              publishing channels, and launch recommendations.
+            </p>
+            <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
+              <ShieldCheck className="h-4 w-4 text-primary" />
+              Leads sent to trueamericanpublishers@gmail.com once email is connected
+            </div>
+          </div>
+
+          <form onSubmit={onSubmit} className="lg:col-span-8 grid md:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <Label htmlFor="q-name">Full name</Label>
+              <Input id="q-name" name="name" placeholder="Jane Carter" maxLength={100} required />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="q-email">Email</Label>
+              <Input id="q-email" name="email" type="email" placeholder="jane@email.com" maxLength={255} required />
+            </div>
+            <div className="space-y-1.5 md:col-span-2">
+              <Label htmlFor="q-genre">Genre or project type</Label>
+              <Input id="q-genre" name="genre" placeholder="Young Adult · Thriller · Romance · Memoir…" maxLength={80} required />
+            </div>
+            <div className="space-y-1.5 md:col-span-2">
+              <Label htmlFor="q-details">A few words about your book</Label>
+              <Textarea id="q-details" name="details" rows={3} placeholder="What's the premise? Who's it for? Where are you in the process?" maxLength={500} required />
+            </div>
+            <Button type="submit" variant="hero" size="lg" className="md:col-span-2" disabled={loading}>
+              {loading ? "Sending…" : "Send My Publishing Plan"}
+              <ArrowRight />
+            </Button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
             <span className="relative inline-block">
               <span className="text-gradient-crimson italic">read.</span>
               <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-crimson rounded-full opacity-70" />
