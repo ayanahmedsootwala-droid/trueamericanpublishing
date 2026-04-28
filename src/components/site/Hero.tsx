@@ -23,6 +23,8 @@ const quoteSchema = z.object({
   details: z.string().trim().min(10, "Add a few words about your book").max(500),
 });
 
+const leadInbox = "trueamericanpublishers@gmail.com";
+
 // Real AI book-cover collage replacing the previous 3D scene
 const heroBooks = [
   { src: ya4, alt: "Gen-Z young adult book cover", className: "top-0 left-1/2 -translate-x-1/2 w-36 md:w-44 rotate-[-5deg] z-20", delay: "0s" },
@@ -55,12 +57,17 @@ const Hero = () => {
       return;
     }
     setLoading(true);
+    const subject = encodeURIComponent(`New publishing plan lead from ${parsed.data.name}`);
+    const body = encodeURIComponent(
+      `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nGenre / Project: ${parsed.data.genre}\n\nBook Details:\n${parsed.data.details}`,
+    );
+    window.location.href = `mailto:${leadInbox}?subject=${subject}&body=${body}`;
     setTimeout(() => {
       setLoading(false);
       (e.target as HTMLFormElement).reset();
       toast({
-        title: "Quote request received",
-        description: "A senior producer will email you a tailored proposal within 24 hours.",
+        title: "Lead magnet request prepared",
+        description: "Your email app opened with the lead details. Branded direct delivery needs email setup completed.",
       });
     }, 900);
   };
@@ -88,7 +95,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="container relative pt-8 pb-14 md:pb-18 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="container relative pt-8 pb-14 md:pb-16 grid lg:grid-cols-12 gap-10 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
