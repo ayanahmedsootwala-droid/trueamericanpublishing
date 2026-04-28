@@ -8,12 +8,9 @@ import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
-import biz1 from "@/assets/genre/biz-1.jpg";
 import thriller1 from "@/assets/genre/thriller-1.jpg";
 import fantasy1 from "@/assets/genre/fantasy-1.jpg";
 import romance1 from "@/assets/genre/romance-1.jpg";
-import memoir1 from "@/assets/genre/memoir-1.jpg";
-import historical1 from "@/assets/genre/historical-1.jpg";
 import ya1 from "@/assets/genre/ya-1.jpg";
 import ya2 from "@/assets/genre/ya-2.jpg";
 import ya3 from "@/assets/genre/ya-3.jpg";
