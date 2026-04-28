@@ -22,7 +22,6 @@ import c3 from "@/assets/genre/children-3.jpg";
 import h1 from "@/assets/genre/historical-1.jpg";
 import h2 from "@/assets/genre/historical-2.jpg";
 import h3 from "@/assets/genre/historical-3.jpg";
-import y1 from "@/assets/genre/ya-1.jpg";
 import y2 from "@/assets/genre/ya-2.jpg";
 import y3 from "@/assets/genre/ya-3.jpg";
 import y4 from "@/assets/genre/ya-4.jpg";
