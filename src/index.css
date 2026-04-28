@@ -37,6 +37,10 @@
     --accent-foreground: 220 25% 10%;
     --accent-glow: 42 95% 62%;
 
+    --footer: 220 25% 6%;
+    --footer-foreground: 0 0% 96%;
+    --footer-muted: 220 10% 68%;
+
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
@@ -92,7 +96,7 @@
 @layer components {
   .font-display {
     font-family: 'Playfair Display', 'Times New Roman', serif;
-    letter-spacing: -0.015em;
+    letter-spacing: 0;
   }
 
   .text-gradient-crimson {
