@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, BookOpen, Sparkles, Star, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles, Star } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
@@ -190,10 +190,6 @@ const Hero = () => {
               Submit your details and receive a tailored roadmap covering your genre, timeline,
               publishing channels, and launch recommendations.
             </p>
-            <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
-              <ShieldCheck className="h-4 w-4 text-primary" />
-              Leads sent to trueamericanpublishers@gmail.com once email is connected
-            </div>
           </div>
 
           <form onSubmit={onSubmit} className="lg:col-span-8 grid md:grid-cols-2 gap-4">
