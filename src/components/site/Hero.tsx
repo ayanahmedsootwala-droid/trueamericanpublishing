@@ -80,7 +80,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-faint opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       {/* Centered logo just under the navbar — no outer tile */}
-      <div className="relative z-10 pt-24 md:pt-28 flex justify-center">
+      <div className="relative z-10 pt-22 md:pt-24 flex justify-center">
         <a href="#top" className="group inline-flex flex-col items-center gap-3 animate-fade-in">
           <img
             src={logo}
@@ -89,13 +89,13 @@ const Hero = () => {
             height={120}
             className="h-20 w-20 md:h-28 md:w-28 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_8px_24px_hsl(var(--primary)/0.25)]"
           />
-          <span className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
             Est. 2013 · Sugarland, Texas
           </span>
         </a>
       </div>
 
-      <div className="container relative pt-8 pb-14 md:pb-16 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="container relative pt-7 pb-12 md:pb-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left — copy */}
         <div className="lg:col-span-7 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
@@ -105,16 +105,16 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] font-bold animate-fade-in-up text-foreground">
-            Turn your manuscript into a book readers can't ignore — and publishers can't overlook.
+          <h1 className="mt-5 max-w-3xl font-display text-[2.35rem] sm:text-[2.75rem] md:text-5xl lg:text-[3.35rem] leading-[1.08] font-semibold animate-fade-in-up text-foreground">
+            A sharper book. A wider audience. A launch that feels effortless.
           </h1>
 
-          <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <p className="mt-5 max-w-2xl text-base md:text-[1.05rem] text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             From raw idea to professionally published eBook, our Sugarland studio handles the
             writing, editing, cover design, distribution, and launch strategy that makes your story feel undeniable.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="mt-7 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#quote">
                 Claim My Free Publishing Plan
@@ -129,7 +129,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+          <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 animate-fade-in" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center gap-2">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -147,7 +147,7 @@ const Hero = () => {
         </div>
 
         {/* Right — real AI book-cover collage */}
-        <div className="lg:col-span-5 relative h-[380px] md:h-[500px]">
+        <div className="lg:col-span-5 relative h-[340px] md:h-[455px]">
           <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-55" />
           <div className="relative h-full w-full">
             {heroBooks.map((b, i) => (
@@ -179,8 +179,8 @@ const Hero = () => {
       </div>
 
       {/* Get-a-quote form */}
-      <div id="quote" className="container relative pb-20 md:pb-24">
-        <div className="reveal in-view premium-card rounded-3xl p-6 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+      <div id="quote" className="container relative pb-16 md:pb-20">
+        <div className="reveal in-view premium-card rounded-2xl p-6 md:p-8 grid lg:grid-cols-12 gap-7 items-center">
           <div className="lg:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Lead Magnet</p>
             <h2 className="mt-3 font-display text-2xl md:text-4xl leading-tight font-bold">
