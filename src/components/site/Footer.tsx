@@ -4,8 +4,8 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border bg-secondary/40 pt-16 pb-10 overflow-hidden">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] bg-gradient-radial-crimson blur-3xl opacity-30" />
+    <footer className="relative border-t border-primary/20 bg-footer pt-16 pb-10 overflow-hidden">
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] bg-gradient-radial-crimson blur-3xl opacity-25" />
 
       <div className="container relative">
         <div className="grid md:grid-cols-12 gap-10">
@@ -18,18 +18,18 @@ const Footer = () => {
                 height={48}
                 className="h-12 w-12 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.25)]"
               />
-              <span className="font-display text-xl font-bold leading-tight">
+              <span className="font-display text-xl font-bold leading-tight text-footer-foreground">
                 True American <span className="text-gradient-crimson">Publishers</span>
               </span>
             </div>
-            <p className="mt-5 text-sm text-muted-foreground max-w-sm leading-relaxed">
+            <p className="mt-5 text-sm text-footer-muted max-w-sm leading-relaxed">
               America's premium eBook publishing studio — turning ambitious authors into
               category-defining voices since 2013. Ghostwriting, design, distribution and
               marketing under one cinematic roof.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:hello@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" /> hello@trueamericanpublishers.com
+            <div className="mt-6 space-y-2 text-sm text-footer-muted">
+              <a href="mailto:trueamericanpublishers@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail className="h-4 w-4" /> trueamericanpublishers@gmail.com
               </a>
               <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> +1 (212) 555-0188
@@ -50,7 +50,7 @@ const Footer = () => {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-footer-muted hover:text-primary hover:border-primary/50 transition-all"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-footer-muted">
               <li><a href="/#services" className="hover:text-primary transition-colors">eBook Writing</a></li>
               <li><a href="/#services" className="hover:text-primary transition-colors">Ghostwriting</a></li>
               <li><a href="/#services" className="hover:text-primary transition-colors">Cover Design</a></li>
@@ -71,23 +71,19 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Genres</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/#work" className="hover:text-primary transition-colors">Business & Self-Help</a></li>
+            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Genres</h4>
+            <ul className="space-y-2 text-sm text-footer-muted">
+              <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Thriller & Mystery</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Fantasy & Sci-Fi</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Romance</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Memoir & Biography</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Historical Fiction</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Children's Books</a></li>
-              <li><a href="/#work" className="hover:text-primary transition-colors">Poetry & Literary</a></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Company</h4>
+            <ul className="space-y-2 text-sm text-footer-muted">
               <li><a href="/#work" className="hover:text-primary transition-colors">Our Work</a></li>
               <li><a href="/#process" className="hover:text-primary transition-colors">Process</a></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
@@ -98,20 +94,20 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-foreground mb-4">Legal</h4>
+            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/terms-and-conditions" className="text-footer-muted hover:text-primary transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/privacy-policy" className="text-footer-muted hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refund-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/refund-policy" className="text-footer-muted hover:text-primary transition-colors">
                   Refund Policy
                 </Link>
               </li>
@@ -119,12 +115,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+          <p className="text-xs text-footer-muted">
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Made in the USA · Trusted by 1,200+ authors worldwide
+          <p className="text-xs text-footer-muted">
+            Made in Sugarland, Texas · Trusted by 2,000+ authors worldwide
           </p>
         </div>
       </div>
