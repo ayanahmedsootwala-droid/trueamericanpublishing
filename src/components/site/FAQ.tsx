@@ -62,7 +62,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="relative py-28 md:py-32 overflow-hidden">
+    <section id="faq" className="relative py-20 md:py-24 overflow-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="absolute top-1/3 left-0 h-[400px] w-[400px] bg-gradient-radial-crimson blur-3xl opacity-40" />

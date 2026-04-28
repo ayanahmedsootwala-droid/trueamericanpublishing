@@ -11,7 +11,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="relative py-28 md:py-32 overflow-hidden">
+    <section id="process" className="relative py-20 md:py-24 overflow-hidden">
       <div className="container">
         <div className="max-w-2xl reveal">
           <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">The Journey</p>
