@@ -25,6 +25,7 @@ import h3 from "@/assets/genre/historical-3.jpg";
 import y1 from "@/assets/genre/ya-1.jpg";
 import y2 from "@/assets/genre/ya-2.jpg";
 import y3 from "@/assets/genre/ya-3.jpg";
+import y4 from "@/assets/genre/ya-4.jpg";
 import p1 from "@/assets/genre/poetry-1.jpg";
 import p2 from "@/assets/genre/poetry-2.jpg";
 import p3 from "@/assets/genre/poetry-3.jpg";
@@ -40,6 +41,17 @@ const genres: Array<{
   books: Book[];
 }> = [
   {
+    id: "ya",
+    label: "Young Adult",
+    icon: GraduationCap,
+    blurb: "TikTok-ready coming-of-age stories built for crossover bestseller status.",
+    books: [
+      { img: y4, title: "Neon Summer", author: "Cara Alib", rank: "BookTok #1" },
+      { img: y2, title: "Summer of Static", author: "Jules Avery", rank: "YA Bestseller" },
+      { img: y3, title: "The Last Signal", author: "Theo Mendez", rank: "NYT YA #4" },
+    ],
+  },
+  {
     id: "business",
     label: "Business & Self-Help",
     icon: Briefcase,
@@ -47,7 +59,7 @@ const genres: Array<{
     books: [
       { img: b1, title: "The Compounding Edge", author: "James R. Holt", rank: "WSJ Bestseller" },
       { img: b2, title: "Lead Without Fear", author: "Sarah Mitchell", rank: "HBR Bestseller" },
-      { img: b3, title: "The Focused Hour", author: "Dr. Marcus Chen", rank: "#3 NYT" },
+      { img: b3, title: "The Focus Star", author: "Dr. Marcus Chen", rank: "#3 NYT" },
     ],
   },
   {
@@ -103,17 +115,6 @@ const genres: Array<{
       { img: h1, title: "The Cartographer's Daughter", author: "Adelaide Roux", rank: "Historical Bestseller" },
       { img: h2, title: "Empire of Salt", author: "Rafael Castile", rank: "Amazon #1" },
       { img: h3, title: "The Velvet Conspiracy", author: "Constance Aldridge", rank: "USA Today" },
-    ],
-  },
-  {
-    id: "ya",
-    label: "Young Adult",
-    icon: GraduationCap,
-    blurb: "TikTok-ready coming-of-age stories built for crossover bestseller status.",
-    books: [
-      { img: y1, title: "Crowns of Ash", author: "Niamh Kestrel", rank: "BookTok #1" },
-      { img: y2, title: "Summer of Static", author: "Jules Avery", rank: "YA Bestseller" },
-      { img: y3, title: "The Last Signal", author: "Theo Mendez", rank: "NYT YA #4" },
     ],
   },
   {
