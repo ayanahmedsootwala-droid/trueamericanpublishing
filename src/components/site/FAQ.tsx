@@ -85,7 +85,7 @@ const FAQ = () => {
             <div className="mt-7 rounded-xl border border-border bg-card p-5 shadow-soft">
               <p className="text-sm text-muted-foreground">
                 <span className="text-foreground font-semibold">Still have questions?</span>
-                <br />Email us at <a href="mailto:hello@trueamericanpublishers.com" className="text-primary hover:underline">hello@trueamericanpublishers.com</a> or book a free 30-minute publishing consultation.
+                <br />Email us at <a href="mailto:contact@trueamericanpublishers.com" className="text-primary hover:underline">contact@trueamericanpublishers.com</a> or book a free 30-minute publishing consultation.
               </p>
             </div>
           </div>

@@ -56,7 +56,7 @@ const About = () => {
               </p>
               <p>
                 A decade later, we're a fully integrated eBook studio headquartered in
-                <span className="text-foreground font-medium"> Sugarland, Texas</span>,
+                <span className="text-foreground font-medium"> Miami, Florida</span>,
                 with a roster of 60+ specialized writers, in-house art directors, audio producers, and a
                 dedicated marketing arm that has placed books in <span className="text-foreground font-medium">USA Today, Wall Street Journal,
                 NYT, Amazon #1, BookTok and Audible top-10</span> charts.

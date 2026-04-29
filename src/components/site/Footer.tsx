@@ -28,14 +28,14 @@ const Footer = () => {
               marketing under one cinematic roof.
             </p>
             <div className="mt-6 space-y-2 text-sm text-footer-muted">
-              <a href="mailto:trueamericanpublishers@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" /> trueamericanpublishers@gmail.com
+              <a href="mailto:contact@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail className="h-4 w-4" /> contact@trueamericanpublishers.com
               </a>
-              <a href="tel:+12125550188" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" /> +1 (212) 555-0188
+              <a href="tel:+12395124903" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Phone className="h-4 w-4" /> +1 (239) 512-4903
               </a>
               <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Sugarland, Texas · USA
+                <MapPin className="h-4 w-4" /> Miami, Florida · USA
               </p>
             </div>
 
@@ -120,7 +120,7 @@ const Footer = () => {
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
           <p className="text-xs text-footer-muted">
-            Made in Sugarland, Texas · Trusted by 2,000+ authors worldwide
+            Made in Miami, Florida · Trusted by 2,000+ authors worldwide
           </p>
         </div>
       </div>
