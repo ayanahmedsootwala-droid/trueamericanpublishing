@@ -14,7 +14,7 @@ const schema = z.object({
   message: z.string().trim().min(10, "Add a bit more detail").max(1000),
 });
 
-const leadInbox = "trueamericanpublishers@gmail.com";
+const leadInbox = "contact@trueamericanpublishers.com";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -73,9 +73,9 @@ const Contact = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { Icon: Mail, label: "trueamericanpublishers@gmail.com" },
-                { Icon: Phone, label: "+1 (212) 555-0188" },
-                { Icon: MapPin, label: "Sugarland, Texas · USA" },
+                { Icon: Mail, label: "contact@trueamericanpublishers.com" },
+                { Icon: Phone, label: "+1 (239) 512-4903" },
+                { Icon: MapPin, label: "Miami, Florida · USA" },
               ].map(({ Icon, label }) => (
                 <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-white">
