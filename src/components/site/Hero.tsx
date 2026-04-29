@@ -23,7 +23,7 @@ const quoteSchema = z.object({
   details: z.string().trim().min(10, "Add a few words about your book").max(500),
 });
 
-const leadInbox = "trueamericanpublishers@gmail.com";
+const leadInbox = "contact@trueamericanpublishers.com";
 
 // Real AI book-cover collage replacing the previous 3D scene
 const heroBooks = [
@@ -90,7 +90,7 @@ const Hero = () => {
             className="h-20 w-20 md:h-28 md:w-28 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_8px_24px_hsl(var(--primary)/0.25)]"
           />
           <span className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
-            Est. 2013 · Sugarland, Texas
+            Est. 2013 · Miami, Florida
           </span>
         </a>
       </div>
@@ -110,7 +110,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-5 max-w-2xl text-base md:text-[1.05rem] text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            From raw idea to professionally published eBook, our Sugarland studio handles the
+            From raw idea to professionally published eBook, our Miami studio handles the
             writing, editing, cover design, distribution, and launch strategy that makes your story feel undeniable.
           </p>
 

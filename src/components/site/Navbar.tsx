@@ -60,10 +60,10 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:+12125550188"
+            href="tel:+12395124903"
             className="text-sm font-medium text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
           >
-            <Phone className="h-4 w-4" /> (212) 555-0188
+            <Phone className="h-4 w-4" /> (239) 512-4903
           </a>
           <Button variant="hero" size="sm" asChild>
             <a href="#quote">Free Quote</a>
