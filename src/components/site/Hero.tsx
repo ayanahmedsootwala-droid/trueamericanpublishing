@@ -40,9 +40,10 @@ const heroBooks = [
 const Hero = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = quoteSchema.safeParse({
       name: fd.get("name"),
       email: fd.get("email"),
@@ -58,19 +59,32 @@ const Hero = () => {
       return;
     }
     setLoading(true);
-    const subject = encodeURIComponent(`New publishing plan lead from ${parsed.data.name}`);
-    const body = encodeURIComponent(
-      `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nGenre / Project: ${parsed.data.genre}\n\nBook Details:\n${parsed.data.details}`,
-    );
-    window.location.href = `mailto:${leadInbox}?subject=${subject}&body=${body}`;
-    setTimeout(() => {
-      setLoading(false);
-      (e.target as HTMLFormElement).reset();
-      toast({
-        title: "Lead magnet request prepared",
-        description: "Your email app opened with the lead details. Branded direct delivery needs email setup completed.",
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-lead", {
+        body: {
+          name: parsed.data.name,
+          email: parsed.data.email,
+          genre: parsed.data.genre,
+          message: parsed.data.details,
+          form_source: "hero_quote",
+        },
       });
-    }, 900);
+      if (error) throw error;
+      form.reset();
+      toast({
+        title: "Publishing plan request received",
+        description: `Thanks ${parsed.data.name.split(" ")[0]} — our director will email you within 24 hours.`,
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email us directly at " + leadInbox,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
