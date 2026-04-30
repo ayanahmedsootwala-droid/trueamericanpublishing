@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, BookOpen, Sparkles, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles, Star, Download } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
@@ -122,9 +122,12 @@ const Hero = () => {
               </a>
             </Button>
             <Button variant="ghostly" size="xl" asChild>
-              <a href="#work">
-                <BookOpen className="mr-1" />
-                See Our Work
+              <a
+                href="/free-chapter-first-90-days.pdf"
+                download="The-First-90-Days-Sample-Chapter.pdf"
+              >
+                <Download className="mr-1" />
+                Sample Our Work
               </a>
             </Button>
           </div>
