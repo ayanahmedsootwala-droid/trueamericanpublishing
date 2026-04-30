@@ -62,7 +62,7 @@ const About = () => {
                 NYT, Amazon #1, BookTok and Audible top-10</span> charts.
               </p>
               <p>
-                We've helped over <span className="text-foreground font-semibold">1,200 authors</span> publish, market, and monetize their books across nine genres — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
+                We've helped over <span className="text-foreground font-semibold">2,000 authors</span> publish, market, and monetize their books across nine genres — generating more than <span className="text-foreground font-semibold">14 million copies sold worldwide</span>.
               </p>
               <blockquote className="border-l-2 border-primary pl-5 text-foreground font-display text-xl italic">
                 "Stories don't just sell — they shape decades."
