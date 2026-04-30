@@ -90,14 +90,13 @@ const FAQ = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="reveal divide-y divide-border rounded-2xl border border-border bg-card px-5 md:px-6 shadow-soft">
+          <div className="lg:col-span-8 reveal">
+            <Accordion type="single" collapsible className="divide-y divide-border rounded-2xl border border-border bg-card px-5 md:px-6 shadow-soft">
               {faqs.map((f, i) => (
                 <AccordionItem
                   key={f.q}
                   value={`item-${i}`}
-                  className="reveal border-0 bg-transparent"
-                  style={{ transitionDelay: `${i * 60}ms` }}
+                  className="border-0 bg-transparent"
                 >
                   <AccordionTrigger className="text-left text-base md:text-[1.05rem] font-semibold py-4 hover:no-underline hover:text-primary">
                     {f.q}
