@@ -1,42 +1,48 @@
 import { Quote, Star } from "lucide-react";
 import deskImg from "@/assets/editorial/desk.jpg";
+import marisol from "@/assets/avatars/marisol-vega.jpg";
+import kenji from "@/assets/avatars/kenji-aoyama.jpg";
+import james from "@/assets/avatars/james-holt.jpg";
+import liana from "@/assets/avatars/liana-storm.jpg";
+import cora from "@/assets/avatars/cora-lane.jpg";
+import sarah from "@/assets/avatars/sarah-mitchell.jpg";
 
 const testimonials = [
   {
     quote: "True American Publishers didn't just publish my book — they engineered a movement. We hit #1 in three categories within 48 hours of launch.",
     name: "Marisol Vega",
     role: "Author of A Quiet Empire",
-    initials: "MV",
+    avatar: marisol,
   },
   {
     quote: "Working with their team felt like joining a Hollywood studio. The cover, the launch, the press — every detail was cinematic.",
     name: "Dr. Kenji Aoyama",
     role: "Bestselling Sci-Fi Author",
-    initials: "KA",
+    avatar: kenji,
   },
   {
     quote: "I came in with 40,000 messy words. I left with a USA Today bestseller and a six-figure speaking pipeline.",
     name: "James R. Holt",
     role: "Founder & WSJ Bestseller",
-    initials: "JH",
+    avatar: james,
   },
   {
     quote: "Their editors transformed my voice without ever silencing it. The final manuscript reads exactly like me — only sharper, deeper, unforgettable.",
     name: "Liana Storm",
     role: "NYT Bestselling Fantasy Author",
-    initials: "LS",
+    avatar: liana,
   },
   {
     quote: "From cover concept to Audible chart-topper in 11 weeks. I've worked with three Big Five imprints — none operated with this precision.",
     name: "Cora Lane",
     role: "Top 10 Audible · Thriller",
-    initials: "CL",
+    avatar: cora,
   },
   {
     quote: "They handled everything — ghostwriting, design, distribution, PR. I just showed up to interviews. My book is now required reading at two MBA programs.",
     name: "Sarah Mitchell",
     role: "HBR Bestseller · Founder",
-    initials: "SM",
+    avatar: sarah,
   },
 ];
 
