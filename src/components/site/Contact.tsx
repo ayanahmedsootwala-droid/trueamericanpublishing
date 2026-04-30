@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
@@ -19,9 +20,10 @@ const leadInbox = "contact@trueamericanpublishers.com";
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = schema.safeParse({
       name: fd.get("name"),
       email: fd.get("email"),
@@ -37,19 +39,32 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    const subject = encodeURIComponent(`New author inquiry from ${parsed.data.name}`);
-    const body = encodeURIComponent(
-      `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nProject: ${parsed.data.project}\n\nMessage:\n${parsed.data.message}`,
-    );
-    window.location.href = `mailto:${leadInbox}?subject=${subject}&body=${body}`;
-    setTimeout(() => {
-      setLoading(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const { error } = await supabase.functions.invoke("submit-lead", {
+        body: {
+          name: parsed.data.name,
+          email: parsed.data.email,
+          genre: parsed.data.project,
+          message: parsed.data.message,
+          form_source: "contact",
+        },
+      });
+      if (error) throw error;
+      form.reset();
       toast({
         title: "Application received",
         description: "Our director will reach out within 24 hours.",
       });
-    }, 900);
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email us directly at " + leadInbox,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
