@@ -1,48 +1,42 @@
 import { Quote, Star } from "lucide-react";
 import deskImg from "@/assets/editorial/desk.jpg";
-import marisol from "@/assets/avatars/marisol-vega.jpg";
-import kenji from "@/assets/avatars/kenji-aoyama.jpg";
-import james from "@/assets/avatars/james-holt.jpg";
-import liana from "@/assets/avatars/liana-storm.jpg";
-import cora from "@/assets/avatars/cora-lane.jpg";
-import sarah from "@/assets/avatars/sarah-mitchell.jpg";
 
 const testimonials = [
   {
     quote: "True American Publishers didn't just publish my book — they engineered a movement. We hit #1 in three categories within 48 hours of launch.",
     name: "Marisol Vega",
     role: "Author of A Quiet Empire",
-    avatar: marisol,
+    initials: "MV",
   },
   {
     quote: "Working with their team felt like joining a Hollywood studio. The cover, the launch, the press — every detail was cinematic.",
     name: "Dr. Kenji Aoyama",
     role: "Bestselling Sci-Fi Author",
-    avatar: kenji,
+    initials: "KA",
   },
   {
     quote: "I came in with 40,000 messy words. I left with a USA Today bestseller and a six-figure speaking pipeline.",
     name: "James R. Holt",
     role: "Founder & WSJ Bestseller",
-    avatar: james,
+    initials: "JH",
   },
   {
     quote: "Their editors transformed my voice without ever silencing it. The final manuscript reads exactly like me — only sharper, deeper, unforgettable.",
     name: "Liana Storm",
     role: "NYT Bestselling Fantasy Author",
-    avatar: liana,
+    initials: "LS",
   },
   {
     quote: "From cover concept to Audible chart-topper in 11 weeks. I've worked with three Big Five imprints — none operated with this precision.",
     name: "Cora Lane",
     role: "Top 10 Audible · Thriller",
-    avatar: cora,
+    initials: "CL",
   },
   {
     quote: "They handled everything — ghostwriting, design, distribution, PR. I just showed up to interviews. My book is now required reading at two MBA programs.",
     name: "Sarah Mitchell",
     role: "HBR Bestseller · Founder",
-    avatar: sarah,
+    initials: "SM",
   },
 ];
 
@@ -105,14 +99,9 @@ const Testimonials = () => {
                 "{t.quote}"
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-3 pt-6 border-t border-border">
-                <img
-                  src={t.avatar}
-                  alt={`Portrait of ${t.name}`}
-                  loading="lazy"
-                  width={44}
-                  height={44}
-                  className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/20"
-                />
+                <div className="h-11 w-11 rounded-full bg-gradient-crimson flex items-center justify-center text-sm font-bold text-primary-foreground">
+                  {t.initials}
+                </div>
                 <div>
                   <div className="font-semibold text-sm text-foreground">{t.name}</div>
                   <div className="text-xs text-muted-foreground">{t.role}</div>
