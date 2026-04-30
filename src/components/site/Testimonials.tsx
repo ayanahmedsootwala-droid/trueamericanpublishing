@@ -105,9 +105,14 @@ const Testimonials = () => {
                 "{t.quote}"
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-3 pt-6 border-t border-border">
-                <div className="h-11 w-11 rounded-full bg-gradient-crimson flex items-center justify-center text-sm font-bold text-primary-foreground">
-                  {t.initials}
-                </div>
+                <img
+                  src={t.avatar}
+                  alt={`Portrait of ${t.name}`}
+                  loading="lazy"
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/20"
+                />
                 <div>
                   <div className="font-semibold text-sm text-foreground">{t.name}</div>
                   <div className="text-xs text-muted-foreground">{t.role}</div>
