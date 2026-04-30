@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, BookOpen, Sparkles, Star, Download } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.png";
 
 import thriller1 from "@/assets/genre/thriller-1.jpg";
