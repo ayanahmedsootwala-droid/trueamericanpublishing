@@ -179,8 +179,8 @@ const Hero = () => {
       </div>
 
       {/* Get-a-quote form */}
-      <div id="quote" className="container relative pb-16 md:pb-20">
-        <div className="reveal in-view premium-card rounded-2xl p-6 md:p-8 grid lg:grid-cols-12 gap-7 items-center">
+      <div id="quote" className="container relative pb-14 md:pb-20">
+        <div className="reveal in-view premium-card rounded-2xl p-5 md:p-8 grid lg:grid-cols-12 gap-6 md:gap-7 items-center">
           <div className="lg:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Lead Magnet</p>
             <h2 className="mt-3 font-display text-2xl md:text-4xl leading-tight font-bold">
