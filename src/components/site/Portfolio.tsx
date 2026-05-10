@@ -145,14 +145,14 @@ const Portfolio = () => {
   const current = genres.find((g) => g.id === active)!;
 
   return (
-    <section id="work" className="relative py-20 md:py-24 overflow-hidden bg-secondary/30">
+    <section id="work" className="relative py-14 md:py-24 overflow-hidden bg-secondary/30">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[420px] w-[800px] bg-gradient-radial-crimson blur-3xl opacity-60" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-12 gap-10 items-end reveal">
           <div className="lg:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Our Work</p>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            <h2 className="font-display text-[2.1rem] md:text-6xl leading-tight font-bold">
               Bestsellers across<br />
               <span className="text-gradient-crimson italic">every category.</span>
             </h2>
@@ -209,7 +209,7 @@ const Portfolio = () => {
         {/* Book grid */}
         <div
           key={current.id}
-          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+          className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 md:gap-10"
           style={{ perspective: "1500px" }}
         >
           {current.books.map((b, i) => (

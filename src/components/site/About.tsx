@@ -34,7 +34,7 @@ const values = [
 
 const About = () => {
   return (
-    <section id="about" className="relative py-20 md:py-24 overflow-hidden">
+    <section id="about" className="relative py-14 md:py-24 overflow-hidden">
       <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[500px] w-[500px] bg-gradient-radial-crimson blur-3xl opacity-50" />
 
       <div className="container relative">
@@ -43,7 +43,7 @@ const About = () => {
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">
               About True American Publishers
             </p>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+            <h2 className="font-display text-[2.1rem] md:text-6xl leading-tight font-bold">
               America's premium<br />
               <span className="text-gradient-crimson italic">eBook studio.</span>
             </h2>
