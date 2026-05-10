@@ -92,33 +92,41 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <figure
-              key={t.name}
-              className="reveal premium-card relative rounded-2xl p-8"
-              style={{ transitionDelay: `${(i % 3) * 100}ms` }}
-            >
-              <Quote className="h-8 w-8 text-primary/30 mb-4" />
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <Star key={idx} className="h-3.5 w-3.5 fill-primary text-primary" />
-                ))}
-              </div>
-              <blockquote className="text-base leading-relaxed text-foreground/90 font-display italic">
-                "{t.quote}"
-              </blockquote>
-              <figcaption className="mt-8 flex items-center gap-3 pt-6 border-t border-border">
-                <div className="h-11 w-11 rounded-full bg-gradient-crimson flex items-center justify-center text-sm font-bold text-primary-foreground">
-                  {t.initials}
-                </div>
-                <div>
-                  <div className="font-semibold text-sm text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-16 reveal">
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+            className="relative px-0 md:px-12"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((t) => (
+                <CarouselItem key={t.name} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <figure className="premium-card relative rounded-2xl p-7 md:p-8 h-full flex flex-col">
+                    <Quote className="h-8 w-8 text-primary/30 mb-4" />
+                    <div className="flex gap-0.5 mb-4">
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <Star key={idx} className="h-3.5 w-3.5 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <blockquote className="text-base leading-relaxed text-foreground/90 font-display italic flex-1">
+                      "{t.quote}"
+                    </blockquote>
+                    <figcaption className="mt-8 flex items-center gap-3 pt-6 border-t border-border">
+                      <div className="h-11 w-11 rounded-full bg-gradient-crimson flex items-center justify-center text-sm font-bold text-primary-foreground">
+                        {t.initials}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-sm text-foreground">{t.name}</div>
+                        <div className="text-xs text-muted-foreground">{t.role}</div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-2 lg:-left-4" />
+            <CarouselNext className="hidden md:flex -right-2 lg:-right-4" />
+          </Carousel>
         </div>
 
         {/* Press logos marquee */}
