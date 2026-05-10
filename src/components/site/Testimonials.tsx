@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Quote, Star } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -7,7 +6,6 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
 import deskImg from "@/assets/editorial/desk.jpg";
 
