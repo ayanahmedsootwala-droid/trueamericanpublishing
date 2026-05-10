@@ -45,13 +45,13 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-20 md:py-24 overflow-hidden">
+    <section id="services" className="relative py-14 md:py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid-faint opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       <div className="container relative">
         <div className="max-w-2xl reveal">
           <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">What We Do</p>
-          <h2 className="font-display text-4xl md:text-6xl leading-tight font-bold">
+          <h2 className="font-display text-[2.1rem] md:text-6xl leading-tight font-bold">
             Eight disciplines.<br />
             <span className="text-gradient-crimson italic">One unstoppable book.</span>
           </h2>
