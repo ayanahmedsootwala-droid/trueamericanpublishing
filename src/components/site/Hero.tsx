@@ -171,7 +171,6 @@ const Hero = () => {
           <div className="absolute bottom-2 left-2 hidden md:flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur border border-border px-4 py-3 shadow-elegant animate-float z-40" style={{ animationDelay: "1s" }}>
             <BookOpen className="h-5 w-5 text-primary" />
             <div className="leading-tight">
-              <div className="text-xs text-muted-foreground">Free lead magnet</div>
               <div className="text-sm font-semibold">Publishing plan in 24 hours</div>
             </div>
           </div>
@@ -182,7 +181,7 @@ const Hero = () => {
       <div id="quote" className="container relative pb-14 md:pb-20">
         <div className="reveal in-view premium-card rounded-2xl p-5 md:p-8 grid lg:grid-cols-12 gap-6 md:gap-7 items-center">
           <div className="lg:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Free Lead Magnet</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Your Publishing Roadmap</p>
             <h2 className="mt-3 font-display text-2xl md:text-4xl leading-tight font-bold">
               Get your <span className="text-gradient-crimson italic">Publishing Plan</span> in 24 hours.
             </h2>
