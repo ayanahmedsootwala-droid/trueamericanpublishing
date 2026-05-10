@@ -80,41 +80,41 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-faint opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
       {/* Centered logo just under the navbar — no outer tile */}
-      <div className="relative z-10 pt-22 md:pt-24 flex justify-center">
-        <a href="#top" className="group inline-flex flex-col items-center gap-3 animate-fade-in">
+      <div className="relative z-10 pt-20 md:pt-24 flex justify-center">
+        <a href="#top" className="group inline-flex flex-col items-center gap-2 md:gap-3 animate-fade-in">
           <img
             src={logo}
             alt="True American Publishers — ghost rising from open book with quill"
             width={120}
             height={120}
-            className="h-20 w-20 md:h-28 md:w-28 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_8px_24px_hsl(var(--primary)/0.25)]"
+            className="h-16 w-16 md:h-28 md:w-28 object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_8px_24px_hsl(var(--primary)/0.25)]"
           />
-          <span className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.35em] text-muted-foreground">
             Est. 2013 · Miami, Florida
           </span>
         </a>
       </div>
 
-      <div className="container relative pt-7 pb-12 md:pb-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="container relative pt-5 md:pt-7 pb-10 md:pb-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left — copy */}
-        <div className="lg:col-span-7 relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 animate-fade-in">
+        <div className="lg:col-span-7 relative z-10 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 md:px-4 md:py-1.5 animate-fade-in">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span className="text-xs uppercase tracking-[0.2em] text-primary font-semibold">
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.18em] md:tracking-[0.2em] text-primary font-semibold">
               The Studio Behind 600+ Published Books
             </span>
           </div>
 
-          <h1 className="mt-5 max-w-3xl font-display text-[2.35rem] sm:text-[2.75rem] md:text-5xl lg:text-[3.35rem] leading-[1.08] font-semibold animate-fade-in-up text-foreground">
+          <h1 className="mt-4 md:mt-5 mx-auto lg:mx-0 max-w-3xl font-display text-[1.85rem] sm:text-[2.4rem] md:text-5xl lg:text-[3.35rem] leading-[1.1] md:leading-[1.08] font-semibold animate-fade-in-up text-foreground">
             A sharper book. A wider audience. A launch that feels effortless.
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base md:text-[1.05rem] text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <p className="mt-4 md:mt-5 mx-auto lg:mx-0 max-w-2xl text-[0.95rem] md:text-[1.05rem] text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             From raw idea to professionally published eBook, our Miami studio handles the
             writing, editing, cover design, distribution, and launch strategy that makes your story feel undeniable.
           </p>
 
-          <div className="mt-7 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="mt-6 md:mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#quote">
                 Claim My Free Publishing Plan
@@ -129,17 +129,17 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+          <div className="mt-7 md:mt-8 flex flex-wrap justify-center lg:justify-start items-center gap-x-5 md:gap-x-7 gap-y-3 animate-fade-in" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center gap-2">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                 ))}
               </div>
-              <span className="text-sm text-muted-foreground">4.9 / 5 from 2,000+ authors</span>
+              <span className="text-xs md:text-sm text-muted-foreground">4.9 / 5 from 2,000+ authors</span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-border" />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs md:text-sm text-muted-foreground">
               <span className="text-foreground font-semibold">600+</span> titles published ·{" "}
               <span className="text-foreground font-semibold">11+</span> years in print
             </p>
@@ -147,7 +147,7 @@ const Hero = () => {
         </div>
 
         {/* Right — real AI book-cover collage */}
-        <div className="lg:col-span-5 relative h-[340px] md:h-[455px]">
+        <div className="lg:col-span-5 relative h-[280px] sm:h-[340px] md:h-[455px]">
           <div className="absolute inset-0 bg-gradient-radial-crimson blur-3xl opacity-55" />
           <div className="relative h-full w-full">
             {heroBooks.map((b, i) => (
