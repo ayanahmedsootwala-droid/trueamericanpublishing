@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[700px] bg-gradient-radial-crimson blur-3xl opacity-25" />
 
       <div className="container relative">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-10">
+          <div className="col-span-2 md:col-span-4">
             <div className="flex items-center gap-2.5">
               <img
                 src={logo}
@@ -24,20 +24,24 @@ const Footer = () => {
             </div>
             <p className="mt-5 text-sm text-footer-muted max-w-sm leading-relaxed">
               America's premium eBook publishing studio — turning ambitious authors into
-              category-defining voices since 2013. Ghostwriting, design, distribution and
-              marketing under one cinematic roof.
+              category-defining voices since 2013.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-footer-muted">
-              <a href="mailto:contact@trueamericanpublishers.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" /> contact@trueamericanpublishers.com
-              </a>
-              <a href="tel:+12395124903" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" /> +1 (239) 512-4903
-              </a>
-              <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Miami, Florida · USA
-              </p>
-            </div>
+            <ul className="mt-6 space-y-2.5 text-sm text-footer-muted">
+              <li>
+                <a href="mailto:contact@trueamericanpublishers.com" className="inline-flex items-center gap-2.5 hover:text-primary transition-colors">
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span className="break-all">contact@trueamericanpublishers.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+12395124903" className="inline-flex items-center gap-2.5 hover:text-primary transition-colors">
+                  <Phone className="h-4 w-4 shrink-0" /> +1 (239) 512-4903
+                </a>
+              </li>
+              <li className="inline-flex items-center gap-2.5">
+                <MapPin className="h-4 w-4 shrink-0" /> Miami, Florida · USA
+              </li>
+            </ul>
 
             <div className="mt-6 flex items-center gap-3">
               {[
@@ -59,8 +63,8 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-footer-muted">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-footer-foreground mb-4">Services</h4>
+            <ul className="space-y-2.5 text-sm text-footer-muted">
               <li><a href="/#services" className="hover:text-primary transition-colors">eBook Writing</a></li>
               <li><a href="/#services" className="hover:text-primary transition-colors">Ghostwriting</a></li>
               <li><a href="/#services" className="hover:text-primary transition-colors">Cover Design</a></li>
@@ -71,8 +75,8 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Genres</h4>
-            <ul className="space-y-2 text-sm text-footer-muted">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-footer-foreground mb-4">Genres</h4>
+            <ul className="space-y-2.5 text-sm text-footer-muted">
               <li><a href="/#work" className="hover:text-primary transition-colors">Young Adult</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Thriller & Mystery</a></li>
               <li><a href="/#work" className="hover:text-primary transition-colors">Fantasy & Sci-Fi</a></li>
@@ -82,8 +86,8 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-footer-muted">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-footer-foreground mb-4">Company</h4>
+            <ul className="space-y-2.5 text-sm text-footer-muted">
               <li><a href="/#work" className="hover:text-primary transition-colors">Our Work</a></li>
               <li><a href="/#process" className="hover:text-primary transition-colors">Process</a></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
@@ -94,20 +98,20 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-footer-foreground mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-footer-foreground mb-4">Legal</h4>
+            <ul className="space-y-2.5 text-sm text-footer-muted">
               <li>
-                <Link to="/terms-and-conditions" className="text-footer-muted hover:text-primary transition-colors">
+                <Link to="/terms-and-conditions" className="hover:text-primary transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-footer-muted hover:text-primary transition-colors">
+                <Link to="/privacy-policy" className="hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refund-policy" className="text-footer-muted hover:text-primary transition-colors">
+                <Link to="/refund-policy" className="hover:text-primary transition-colors">
                   Refund Policy
                 </Link>
               </li>
@@ -115,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-center md:text-left">
           <p className="text-xs text-footer-muted">
             © {new Date().getFullYear()} True American Publishers. All rights reserved.
           </p>
