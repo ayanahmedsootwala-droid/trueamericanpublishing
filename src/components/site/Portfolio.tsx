@@ -209,7 +209,7 @@ const Portfolio = () => {
         {/* Book grid */}
         <div
           key={current.id}
-          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+          className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 md:gap-10"
           style={{ perspective: "1500px" }}
         >
           {current.books.map((b, i) => (
