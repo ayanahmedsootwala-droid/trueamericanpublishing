@@ -40,6 +40,17 @@ const genres: Array<{
   books: Book[];
 }> = [
   {
+    id: "thriller",
+    label: "Thriller & Mystery",
+    icon: Skull,
+    blurb: "Page-turning suspense engineered to dominate Kindle and Audible charts.",
+    books: [
+      { img: t1, title: "The Midnight Ledger", author: "E. Ravensworth", rank: "#1 NYT" },
+      { img: t2, title: "What She Buried", author: "Cora Lane", rank: "Top 10 Audible" },
+      { img: t3, title: "Cold Evidence", author: "Detective Ray Walsh", rank: "Amazon #2" },
+    ],
+  },
+  {
     id: "ya",
     label: "Young Adult",
     icon: GraduationCap,
@@ -51,25 +62,14 @@ const genres: Array<{
     ],
   },
   {
-    id: "business",
-    label: "Business & Self-Help",
-    icon: Briefcase,
-    blurb: "Authority-building books for founders, executives and thought leaders.",
+    id: "memoir",
+    label: "Memoir & Biography",
+    icon: BookHeart,
+    blurb: "Intimate true stories given the literary polish of a Big Five debut.",
     books: [
-      { img: b1, title: "The Compounding Edge", author: "James R. Holt", rank: "WSJ Bestseller" },
-      { img: b2, title: "Lead Without Fear", author: "Sarah Mitchell", rank: "HBR Bestseller" },
-      { img: b3, title: "The Focus Star", author: "Dr. Marcus Chen", rank: "#3 NYT" },
-    ],
-  },
-  {
-    id: "thriller",
-    label: "Thriller & Mystery",
-    icon: Skull,
-    blurb: "Page-turning suspense engineered to dominate Kindle and Audible charts.",
-    books: [
-      { img: t1, title: "The Midnight Ledger", author: "E. Ravensworth", rank: "#1 NYT" },
-      { img: t2, title: "What She Buried", author: "Cora Lane", rank: "Top 10 Audible" },
-      { img: t3, title: "Cold Evidence", author: "Detective Ray Walsh", rank: "Amazon #2" },
+      { img: m1, title: "Letters I Never Sent", author: "Helena Marsh", rank: "Indie Bestseller" },
+      { img: m2, title: "The House on Mulberry Lane", author: "Theodore Vance", rank: "NPR Pick" },
+      { img: m3, title: "Becoming Ember", author: "Yara Solano", rank: "Goodreads Choice" },
     ],
   },
   {
@@ -95,14 +95,14 @@ const genres: Array<{
     ],
   },
   {
-    id: "memoir",
-    label: "Memoir & Biography",
-    icon: BookHeart,
-    blurb: "Intimate true stories given the literary polish of a Big Five debut.",
+    id: "business",
+    label: "Business & Self-Help",
+    icon: Briefcase,
+    blurb: "Authority-building books for founders, executives and thought leaders.",
     books: [
-      { img: m1, title: "Letters I Never Sent", author: "Helena Marsh", rank: "Indie Bestseller" },
-      { img: m2, title: "The House on Mulberry Lane", author: "Theodore Vance", rank: "NPR Pick" },
-      { img: m3, title: "Becoming Ember", author: "Yara Solano", rank: "Goodreads Choice" },
+      { img: b1, title: "The Compounding Edge", author: "James R. Holt", rank: "WSJ Bestseller" },
+      { img: b2, title: "Lead Without Fear", author: "Sarah Mitchell", rank: "HBR Bestseller" },
+      { img: b3, title: "The Focus Star", author: "Dr. Marcus Chen", rank: "#3 NYT" },
     ],
   },
   {
