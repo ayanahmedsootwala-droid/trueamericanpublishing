@@ -46,6 +46,30 @@ const testimonials = [
     role: "HBR Bestseller · Founder",
     initials: "SM",
   },
+  {
+    quote: "I'd been rejected by twelve agents. True American Publishers turned my manuscript into an Amazon #1 in historical fiction within its first month.",
+    name: "Adelaide Roux",
+    role: "Historical Fiction Bestseller",
+    initials: "AR",
+  },
+  {
+    quote: "The cover alone tripled my pre-orders. Their art direction is on a different planet — every reviewer mentions it before they mention the writing.",
+    name: "Theo Mendez",
+    role: "NYT YA Bestselling Author",
+    initials: "TM",
+  },
+  {
+    quote: "They didn't just edit my poetry — they treated each line like a sculpture. The collection won a Goodreads Choice nomination in its debut year.",
+    name: "Imani Vale",
+    role: "Award-Winning Poet",
+    initials: "IV",
+  },
+  {
+    quote: "From the first call I knew this wasn't a vanity press. Strategy, distribution, foreign rights — they out-executed every Big Five team I've worked with.",
+    name: "Rafael Castile",
+    role: "International Bestseller",
+    initials: "RC",
+  },
 ];
 
 const Testimonials = () => {
@@ -122,8 +146,8 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-2 lg:-left-4" />
-            <CarouselNext className="hidden md:flex -right-2 lg:-right-4" />
+            <CarouselPrevious className="flex left-1 md:-left-2 lg:-left-4" />
+            <CarouselNext className="flex right-1 md:-right-2 lg:-right-4" />
           </Carousel>
         </div>
 
