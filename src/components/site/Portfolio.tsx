@@ -40,17 +40,6 @@ const genres: Array<{
   books: Book[];
 }> = [
   {
-    id: "thriller",
-    label: "Thriller & Mystery",
-    icon: Skull,
-    blurb: "Page-turning suspense engineered to dominate Kindle and Audible charts.",
-    books: [
-      { img: t1, title: "The Midnight Ledger", author: "E. Ravensworth", rank: "#1 NYT" },
-      { img: t2, title: "What She Buried", author: "Cora Lane", rank: "Top 10 Audible" },
-      { img: t3, title: "Cold Evidence", author: "Detective Ray Walsh", rank: "Amazon #2" },
-    ],
-  },
-  {
     id: "ya",
     label: "Young Adult",
     icon: GraduationCap,
@@ -59,6 +48,17 @@ const genres: Array<{
       { img: y4, title: "Neon Summer", author: "Cara Alib", rank: "BookTok #1" },
       { img: y2, title: "Summer of Static", author: "Jules Avery", rank: "YA Bestseller" },
       { img: y3, title: "The Last Signal", author: "Theo Mendez", rank: "NYT YA #4" },
+    ],
+  },
+  {
+    id: "thriller",
+    label: "Thriller & Mystery",
+    icon: Skull,
+    blurb: "Page-turning suspense engineered to dominate Kindle and Audible charts.",
+    books: [
+      { img: t1, title: "The Midnight Ledger", author: "E. Ravensworth", rank: "#1 NYT" },
+      { img: t2, title: "What She Buried", author: "Cora Lane", rank: "Top 10 Audible" },
+      { img: t3, title: "Cold Evidence", author: "Detective Ray Walsh", rank: "Amazon #2" },
     ],
   },
   {
