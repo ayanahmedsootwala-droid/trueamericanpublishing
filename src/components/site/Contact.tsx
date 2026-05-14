@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="mt-10 space-y-4">
               {[
                 { Icon: Mail, label: "contact@trueamericanpublishers.com" },
-                { Icon: Phone, label: "+1 (239) 512-4903" },
+                { Icon: Phone, label: "+1 (201) 801-7966" },
                 { Icon: MapPin, label: "Miami, Florida · USA" },
               ].map(({ Icon, label }) => (
                 <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
